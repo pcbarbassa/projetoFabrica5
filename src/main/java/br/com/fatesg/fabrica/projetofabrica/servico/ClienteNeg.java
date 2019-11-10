@@ -1,25 +1,24 @@
 package br.com.fatesg.fabrica.projetofabrica.servico;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.fatesg.fabrica.projetofabrica.repositorio.Cliente;
+import br.com.fatesg.fabrica.projetofabrica.Cliente;
 import br.com.fatesg.fabrica.projetofabrica.repositorio.ClienteRepository;
 
 @Service
 public class ClienteNeg {
 	
 	@Autowired
-	public ClienteRepository clienteRepository;
+	public ClienteRepository repository;
 	
-	public List<Cliente> findById(int id){
-    	return clienteRepository.findById(id);
+	public Cliente findById(int id){
+    	return repository.findById(id);
     }
     
     public Cliente findDescricaoById(Long id) {
-    	return clienteRepository.getOne(id);
+    	return repository.getOne(id);
     }
     
     public List<Cliente> findByIdOrderByDescricao(String descricao){
@@ -27,16 +26,22 @@ public class ClienteNeg {
     }
     
     public List<Cliente> findAll() {
-    	return clienteRepository.findAll();
-    }
+    	return repository.findAll();
+    }   
 
-	public Cliente save(Cliente newCliente) {
-		clienteRepository.save(newCliente);
-		return newCliente;
+
+	public Cliente save(Cliente obj) {
+		repository.save(obj);
+		return obj;
 	}
 		
-	public void deleteById(long id) {
-		clienteRepository.deleteById(id);
+	public void removerPorId(long id) {
+		repository.deleteById(id);
+	
+	}
+	
+	public void remover(Cliente cliente) {
+		repository.delete(cliente);
 	
 	}
 }

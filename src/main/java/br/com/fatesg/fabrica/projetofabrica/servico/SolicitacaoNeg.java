@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.fatesg.fabrica.projetofabrica.repositorio.Solicitacao;
+import br.com.fatesg.fabrica.projetofabrica.Solicitacao;
 import br.com.fatesg.fabrica.projetofabrica.repositorio.SolicitacaoRepository;
 
 @Service

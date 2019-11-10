@@ -1,4 +1,4 @@
-package br.com.fatesg.fabrica.projetofabrica.repositorio;
+package br.com.fatesg.fabrica.projetofabrica;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Cliente {
+public class Prestador {
   
       @Id
       @GeneratedValue(strategy=GenerationType.AUTO)    
@@ -68,7 +68,7 @@ public class Cliente {
 		this.cidade = cidade;
 	}
 
-	public Cliente(String nome, String documento, String idade, String rg, String endereco, String cidade)
+	public Prestador(String nome, String documento, String idade, String rg, String endereco, String cidade)
       {
 		  this.nome = nome;
 		  this.documento = documento;
@@ -78,7 +78,7 @@ public class Cliente {
 		  this.cidade = cidade;
       }       
   
-      public Cliente() {}
+      public Prestador() {}
            
       
       public int getId() {

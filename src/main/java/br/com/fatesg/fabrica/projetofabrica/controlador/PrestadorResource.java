@@ -1,7 +1,6 @@
 package br.com.fatesg.fabrica.projetofabrica.controlador;
 
 import java.util.List;
-import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -20,64 +19,65 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.fatesg.fabrica.projetofabrica.Cliente;
-import br.com.fatesg.fabrica.projetofabrica.servico.ClienteNeg;
+import br.com.fatesg.fabrica.projetofabrica.Prestador;
+import br.com.fatesg.fabrica.projetofabrica.servico.PrestadorNeg;
 @Qualifier
 @RestController
-@RequestMapping(value="/api/clientes", path="/api/clientes")
-public class ClienteResource {
+@RequestMapping(value="/api/prestadores", path="/api/prestadores")
+public class PrestadorResource {
 		
 	@Autowired
-	private ClienteNeg negocio;
+	private PrestadorNeg negocio;
 
 	@GetMapping
-	public List<Cliente> listar() {
+	public List<Prestador> listar() {
 		return negocio.findAll();
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Cliente> buscar(@PathVariable int id) {
-		Cliente cliente = negocio.findById(id);
+	public ResponseEntity<Prestador> buscar(@PathVariable int id) {
+		Prestador prestador = negocio.findById(id);
 		
-		if (cliente == null) {
+		if (prestador == null) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		return ResponseEntity.ok(cliente);
+		return ResponseEntity.ok(prestador);
 		
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Cliente> atualizar(@PathVariable int id, 
+	public ResponseEntity<Prestador> atualizar(@PathVariable int id, 
 			@Valid @RequestBody Cliente cliente) {
-		Cliente clienteExistente = negocio.findById(id);
+		Prestador obj = negocio.findById(id);
 		
-		if (clienteExistente == null) {
+		if (obj == null) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		BeanUtils.copyProperties(cliente, clienteExistente, "id");
+		BeanUtils.copyProperties(cliente, obj, "id");
 		
-		clienteExistente = negocio.save(clienteExistente);
+		obj = negocio.save(obj);
 		
-		return ResponseEntity.ok(clienteExistente);
+		return ResponseEntity.ok(obj);
 		
 	}
 	
 	@PostMapping
-	public Cliente criar(@Valid @RequestBody Cliente cliente){
-	   return negocio.save(cliente);
+	public Prestador criar(@Valid @RequestBody Prestador obj){
+	   return negocio.save(obj);
 	}
 
 	@DeleteMapping("/{id}")
     public ResponseEntity<Void> remover(@PathVariable int id) {
         
-		Cliente cliente = negocio.findById(id);
+		Prestador obj = negocio.findById(id);
 		
-		if (cliente == null) {
+		if (obj == null) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		negocio.remover(cliente);
+		negocio.delete(obj);
 	
 		
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);

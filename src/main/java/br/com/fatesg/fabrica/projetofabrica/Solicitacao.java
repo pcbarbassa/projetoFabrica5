@@ -1,4 +1,4 @@
-package br.com.fatesg.fabrica.projetofabrica.repositorio;
+package br.com.fatesg.fabrica.projetofabrica;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,24 +6,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Servico {
+public class Solicitacao {
   
       @Id
       @GeneratedValue(strategy=GenerationType.AUTO)    
       private Long id;
        
       private double valorTotal;
-      private int numeroServicos;
+      private int numeroProdutos;
       private String descricao;
+      public Solicitacao() {}
       
-      public Servico(String descricao, double valorTotal)
-      {
+      public Solicitacao(double valorTotal, String descricao) {
     	  this.valorTotal = valorTotal;
     	  this.setDescricao(descricao);
-      }       
-  
-      public Servico() {}
-           
+      }
       
       public Long getId() {
             return id;
@@ -37,24 +34,24 @@ public class Servico {
             return valorTotal;
       }
   
-      public void setValorTotal(double valorTotal) {
+      public void setValorTotal(float valorTotal) {
             this.valorTotal = valorTotal;
       }
   
-      public int getNumeroServicos() {
-            return numeroServicos;
+      public int getNumeroProdutos() {
+            return numeroProdutos;
       }
   
-      public void setNumeroServicos(int numeroServicos) {
-            this.numeroServicos = numeroServicos;
-      }
+	  public void setNumeroProdutos(int numeroProdutos) {
+	        this.numeroProdutos = numeroProdutos;
+	  }
 
-		public String getDescricao() {
-			return descricao;
-		}
+	public String getDescricao() {
+		return descricao;
+	}
 	
-		public void setDescricao(String descricao) {
-			this.descricao = descricao;
-		}
-	       
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+       
 }

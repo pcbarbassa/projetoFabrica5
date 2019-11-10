@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.fatesg.fabrica.projetofabrica.repositorio.Servico;
+import br.com.fatesg.fabrica.projetofabrica.Servico;
 import br.com.fatesg.fabrica.projetofabrica.servico.ServicoNeg;
 @Qualifier
 @RestController
