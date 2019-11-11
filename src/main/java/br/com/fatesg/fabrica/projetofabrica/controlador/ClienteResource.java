@@ -1,7 +1,6 @@
 package br.com.fatesg.fabrica.projetofabrica.controlador;
 
 import java.util.List;
-import java.util.Optional;
 
 import javax.validation.Valid;
 
