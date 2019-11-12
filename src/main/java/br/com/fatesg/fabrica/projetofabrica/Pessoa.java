@@ -25,4 +25,5 @@ public class Pessoa {
     @NotNull @Getter @Setter private Date dt_nascimento;
     @Getter @Setter private String identidade;
     @Getter @Setter private String endereco;
+    @Getter @Setter private String NomeDaMae; 
 }
