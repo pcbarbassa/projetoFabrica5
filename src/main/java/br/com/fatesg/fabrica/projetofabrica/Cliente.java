@@ -17,6 +17,12 @@ import lombok.ToString;
 @Entity
 @ToString
 @AllArgsConstructor
-public class Cliente extends Pessoa{  
-      
+public class Cliente {
+	@Id @GeneratedValue(strategy=GenerationType.AUTO) @Getter private int id;     
+    @NotNull @Getter @Setter private String nome;
+    @NotNull @Getter @Setter private String cpf_cnpj;
+    @NotNull @Getter @Setter @Email private String email;
+    @NotNull @Getter @Setter private Date dt_nascimento;
+    @Getter @Setter private String identidade;
+    @Getter @Setter private String endereco;      
 }

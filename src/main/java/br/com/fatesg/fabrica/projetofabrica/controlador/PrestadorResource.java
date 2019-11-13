@@ -27,16 +27,16 @@ import br.com.fatesg.fabrica.projetofabrica.servico.PrestadorNeg;
 public class PrestadorResource {
 		
 	@Autowired
-	private PrestadorNeg negocio;
+	private PrestadorNeg prestadorNeg;
 
 	@GetMapping
 	public List<Prestador> listar() {
-		return negocio.findAll();
+		return prestadorNeg.findAll();
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Prestador> buscar(@PathVariable int id) {
-		Prestador prestador = negocio.findById(id);
+		Prestador prestador = prestadorNeg.findById(id);
 		
 		if (prestador == null) {
 			return ResponseEntity.notFound().build();
@@ -49,7 +49,7 @@ public class PrestadorResource {
 	@PutMapping("/{id}")
 	public ResponseEntity<Prestador> atualizar(@PathVariable int id, 
 			@Valid @RequestBody Cliente cliente) {
-		Prestador obj = negocio.findById(id);
+		Prestador obj = prestadorNeg.findById(id);
 		
 		if (obj == null) {
 			return ResponseEntity.notFound().build();
@@ -57,27 +57,27 @@ public class PrestadorResource {
 		
 		BeanUtils.copyProperties(cliente, obj, "id");
 		
-		obj = negocio.save(obj);
+		obj = prestadorNeg.save(obj);
 		
 		return ResponseEntity.ok(obj);
 		
 	}
 	
 	@PostMapping
-	public Prestador criar(@Valid @RequestBody Prestador obj){
-	   return negocio.save(obj);
+	public Prestador criar(@RequestBody Prestador obj){
+	   return prestadorNeg.save(obj);
 	}
 
 	@DeleteMapping("/{id}")
     public ResponseEntity<Void> remover(@PathVariable int id) {
         
-		Prestador obj = negocio.findById(id);
+		Prestador obj = prestadorNeg.findById(id);
 		
 		if (obj == null) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		negocio.delete(obj);
+		prestadorNeg.delete(obj);
 	
 		
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);

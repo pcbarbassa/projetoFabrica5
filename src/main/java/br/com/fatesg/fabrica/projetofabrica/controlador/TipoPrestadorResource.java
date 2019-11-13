@@ -63,7 +63,7 @@ public class TipoPrestadorResource {
 	}
 	
 	@PostMapping
-	public TipoPrestador criar(@Valid @RequestBody TipoPrestador obj){
+	public TipoPrestador criar(TipoPrestador obj){
 	   return negocio.save(obj);
 	}
 

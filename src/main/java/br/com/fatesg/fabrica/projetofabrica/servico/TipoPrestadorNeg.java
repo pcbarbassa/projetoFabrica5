@@ -30,19 +30,16 @@ public class TipoPrestadorNeg {
     	return repository.findAll();
     }   
 
-
 	public TipoPrestador save(TipoPrestador obj) {
 		repository.save(obj);
 		return obj;
 	}
 		
 	public void removerPorId(long id) {
-		repository.deleteById(id);
-	
+		repository.deleteById(id);	
 	}
 	
 	public void remover(TipoPrestador obj) {
-		repository.delete(obj);
-	
+		repository.delete(obj);	
 	}
 }
