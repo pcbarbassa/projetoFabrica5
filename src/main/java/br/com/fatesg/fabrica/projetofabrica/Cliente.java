@@ -19,10 +19,26 @@ import lombok.ToString;
 @AllArgsConstructor
 public class Cliente {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO) @Getter private int id;     
-    @NotNull @Getter @Setter private String nome;
-    @NotNull @Getter @Setter private String cpf_cnpj;
+    @NotNull private String nome;
+    @NotNull private String cpf_cnpj;
     @NotNull @Getter @Setter @Email private String email;
     @NotNull @Getter @Setter private Date dt_nascimento;
     @Getter @Setter private String identidade;
-    @Getter @Setter private String endereco;      
+    @Getter @Setter private String endereco;
+    
+	public String getNome() {
+		return nome;
+	}
+	public String getCpf_cnpj() {
+		return cpf_cnpj;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public void setCpf_cnpj(String cpf_cnpj) {
+		this.cpf_cnpj = cpf_cnpj;
+	}      
 }

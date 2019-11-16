@@ -35,14 +35,11 @@ public class TipoPrestadorResource {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<TipoPrestador> buscar(@PathVariable int id) {
-		TipoPrestador obj = negocio.findById(id);
-		
+		TipoPrestador obj = negocio.findById(id);		
 		if (obj == null) {
 			return ResponseEntity.notFound().build();
-		}
-		
-		return ResponseEntity.ok(obj);
-		
+		}		
+		return ResponseEntity.ok(obj);		
 	}
 	
 	@PutMapping("/{id}")
@@ -54,31 +51,24 @@ public class TipoPrestadorResource {
 			return ResponseEntity.notFound().build();
 		}
 		
-		BeanUtils.copyProperties(obj, existente, "id");
-		
-		existente = negocio.save(existente);
-		
-		return ResponseEntity.ok(existente);
-		
+		BeanUtils.copyProperties(obj, existente, "id");		
+		existente = negocio.save(existente);		
+		return ResponseEntity.ok(existente);		
 	}
 	
 	@PostMapping
-	public TipoPrestador criar(TipoPrestador obj){
-	   return negocio.save(obj);
+	public TipoPrestador criar(@Valid @RequestBody TipoPrestador objeto){
+	   return negocio.save(objeto);
 	}
 
 	@DeleteMapping("/{id}")
     public ResponseEntity<Void> remover(@PathVariable int id) {
         
-		TipoPrestador obj = negocio.findById(id);
-		
+		TipoPrestador obj = negocio.findById(id);		
 		if (obj == null) {
 			return ResponseEntity.notFound().build();
-		}
-		
-		negocio.remover(obj);
-	
-		
+		}		
+		negocio.remover(obj);		
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
 }

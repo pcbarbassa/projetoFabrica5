@@ -17,11 +17,11 @@ public class ClienteNeg {
     	return repository.findById(id);
     }
     
-    public Cliente findDescricaoById(Long id) {
+    public Cliente findByIdOrderByNome(Long id) {
     	return repository.getOne(id);
     }
     
-    public List<Cliente> findByIdOrderByDescricao(String descricao){
+    public List<Cliente> findByClientesOrderByNome(String nome){
     	return null;
     }
     

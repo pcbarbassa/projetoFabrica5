@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,4 +22,7 @@ public class OrdemServico {
     @Getter @Setter private String descricao;
     @Getter @Setter private Float valor;
     @Getter @Setter private int status_servico;
+    @ManyToOne
+    @Getter @Setter private Servico servico;
+    
 }

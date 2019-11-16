@@ -12,7 +12,9 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
        
       Cliente findById(@Param("id") int id);
                
-      Cliente findDescricaoById(@Param("id") Long id);
+      Cliente findClienteById(@Param("id") Long id);
+      
+      String findNomeById(@Param("id") Long id);
       
       List<Cliente> findByIdOrderByNome(@Param("id") String nome);
   
