@@ -1,13 +1,12 @@
 package br.com.fatesg.fabrica.projetofabrica;
 
 import java.io.Serializable;
-import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,29 +18,26 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrdemServico implements Serializable {
+public class Endereco implements Serializable {
 	private static final long serialVersionUID = 1L;	
 	 
 	@Getter @Id @GeneratedValue(strategy=GenerationType.AUTO)  
-	private long id;
+	private long id;     
     
 	@Getter @Setter 
-	private Date data;
+	private String logradouro;
     
 	@Getter @Setter 
-	private String descricao;
+	private String cep;	
     
 	@Getter @Setter 
-	private Float valor;
+	private String cidade;
     
-	@Getter @Setter 
-	private int status_servico;
+	@Getter @Setter
+	private String estado;	 
+    
+	@Getter @Setter
+	private String pais;
 	
-	@Getter @Setter @OneToOne 
-	private Prestador prestador;
-	    
-	@Getter @Setter @OneToOne 
-	private Solicitacao solicitacao;
 }
-
 

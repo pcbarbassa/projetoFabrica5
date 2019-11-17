@@ -1,70 +1,41 @@
 package br.com.fatesg.fabrica.projetofabrica;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
-public class Solicitacao {
-  
-      @Id
-      @GeneratedValue(strategy=GenerationType.AUTO)    
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+public class Solicitacao implements Serializable {
+	private static final long serialVersionUID = 1L;      
+          
+      @Getter @Id @GeneratedValue(strategy=GenerationType.AUTO) 
       private Long id;
        
+      @Getter @Setter
       private double valorTotal;
+      
+      @Getter @Setter
       private int numeroProdutos;
+      
+      @Getter @Setter
       private String descricao;
-      @ManyToOne
-      private Servico servico;
       
+      @Getter @Setter @OneToOne 
+      private OrdemServico ordemServico;
       
-      public Solicitacao() {}
-      
-      public Solicitacao(double valorTotal, String descricao) {
-    	  this.valorTotal = valorTotal;
-    	  this.setDescricao(descricao);
-      }
-      
-      public Long getId() {
-            return id;
-      }
-  
-      public void setId(Long id) {
-            this.id = id;
-      }
-  
-      public double getValorTotal() {
-            return valorTotal;
-      }
-  
-      public void setValorTotal(float valorTotal) {
-            this.valorTotal = valorTotal;
-      }
-  
-      public int getNumeroProdutos() {
-            return numeroProdutos;
-      }
-  
-	  public void setNumeroProdutos(int numeroProdutos) {
-	        this.numeroProdutos = numeroProdutos;
-	  }
-
-	public String getDescricao() {
-		return descricao;
-	}
-	
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public Servico getServico() {
-		return servico;
-	}
-
-	public void setServico(Servico servico) {
-		this.servico = servico;
-	}
-       
+      @Getter @Setter @OneToOne
+      private Cliente cliente;
 }

@@ -1,5 +1,6 @@
 package br.com.fatesg.fabrica.projetofabrica;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -10,17 +11,27 @@ import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Entity
 @ToString
+@NoArgsConstructor
 @AllArgsConstructor
-public class OrdemPagamento {        
-	@Id @GeneratedValue(strategy=GenerationType.AUTO) @Getter private long id;
-    @Getter @Setter private Date data;
-    @Getter @Setter private Float valor;
-    @OneToOne
-    @Getter @Setter private Solicitacao solicitacao;
+public class OrdemPagamento implements Serializable {
+	private static final long serialVersionUID = 1L;	
+	 
+	@Getter @Id @GeneratedValue(strategy=GenerationType.AUTO)  
+	private long id;
+    
+	@Getter @Setter 
+	private Date data;
+    
+	@Getter @Setter 
+	private Float valor;	
+    
+	@Getter @Setter @OneToOne
+	private OrdemServico ordemServico;
     
 }

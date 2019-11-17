@@ -5,32 +5,32 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.fatesg.fabrica.projetofabrica.TipoPrestador;
-import br.com.fatesg.fabrica.projetofabrica.repositorio.TipoPrestadorRepository;
+import br.com.fatesg.fabrica.projetofabrica.Endereco;
+import br.com.fatesg.fabrica.projetofabrica.repositorio.EnderecoRepository;
 
 @Service
-public class TipoPrestadorNeg {
+public class EnderecoNeg {
 	
 	@Autowired
-	public TipoPrestadorRepository repository;
+	public EnderecoRepository repository;
 	
-	public TipoPrestador findById(long id){
+	public Endereco findById(int id){
     	return repository.findById(id);
     }
     
-    public TipoPrestador findDescricaoById(Long id) {
+    public Endereco findCepById(Long id) {
     	return repository.getOne(id);
     }
     
-    public List<TipoPrestador> findByIdOrderByDescricao(String descricao){
+    public List<Endereco> findByIdOrderByCep(String cep){
     	return null;
     }
     
-    public List<TipoPrestador> findAll() {
+    public List<Endereco> findAll() {
     	return repository.findAll();
     }   
 
-	public TipoPrestador save(TipoPrestador obj) {
+	public Endereco save(Endereco obj) {
 		repository.save(obj);
 		return obj;
 	}
@@ -39,7 +39,7 @@ public class TipoPrestadorNeg {
 		repository.deleteById(id);	
 	}
 	
-	public void remover(TipoPrestador obj) {
+	public void remover(Endereco obj) {
 		repository.delete(obj);	
 	}
 }
