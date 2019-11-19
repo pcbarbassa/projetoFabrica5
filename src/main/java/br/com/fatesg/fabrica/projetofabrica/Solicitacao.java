@@ -1,12 +1,16 @@
 package br.com.fatesg.fabrica.projetofabrica;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,10 +29,13 @@ public class Solicitacao implements Serializable {
       private Long id;
        
       @Getter @Setter
-      private double valorTotal;
+      private Float valor;
       
-      @Getter @Setter
-      private int status;
+      @Getter @Setter @NotNull @JsonFormat(pattern="yyyy-MM-dd")
+      private Date data;
+      
+      @Getter @Setter @OneToOne
+      private StatusSolicitacao statusSolicitacao;
       
       @Getter @Setter
       private String descricao;

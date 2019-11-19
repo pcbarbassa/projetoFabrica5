@@ -18,68 +18,57 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.fatesg.fabrica.projetofabrica.Cliente;
-import br.com.fatesg.fabrica.projetofabrica.Prestador;
-import br.com.fatesg.fabrica.projetofabrica.servico.PrestadorNeg;
+import br.com.fatesg.fabrica.projetofabrica.StatusServico;
+import br.com.fatesg.fabrica.projetofabrica.servico.StatusServicoNeg;
 @Qualifier
 @RestController
-@RequestMapping(value="/api/prestadores", path="/api/prestadores")
-public class PrestadorResource {
+@RequestMapping(value="/api/statusservico", path="/api/statusservico")
+public class StatusServicoResource {
 		
 	@Autowired
-	private PrestadorNeg prestadorNeg;
+	private StatusServicoNeg negocio;
 
 	@GetMapping
-	public List<Prestador> listar() {
-		return prestadorNeg.findAll();
+	public List<StatusServico> listar() {
+		return negocio.findAll();
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Prestador> buscar(@PathVariable int id) {
-		Prestador prestador = prestadorNeg.findById(id);
-		
-		if (prestador == null) {
+	public ResponseEntity<StatusServico> buscar(@PathVariable long id) {
+		StatusServico obj = negocio.findById(id);		
+		if (obj == null) {
 			return ResponseEntity.notFound().build();
-		}
-		
-		return ResponseEntity.ok(prestador);
-		
+		}		
+		return ResponseEntity.ok(obj);		
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Prestador> atualizar(@PathVariable int id, 
-			@Valid @RequestBody Prestador prestador) {
-		Prestador obj = prestadorNeg.findById(id);
+	public ResponseEntity<StatusServico> atualizar(@PathVariable int id, 
+			@Valid @RequestBody StatusServico obj) {
+		StatusServico existente = negocio.findById(id);
 		
-		if (obj == null) {
+		if (existente == null) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		BeanUtils.copyProperties(prestador, obj, "id");
-		
-		obj = prestadorNeg.save(obj);
-		
-		return ResponseEntity.ok(obj);
-		
+		BeanUtils.copyProperties(obj, existente, "id");		
+		existente = negocio.save(existente);		
+		return ResponseEntity.ok(existente);		
 	}
 	
 	@PostMapping
-	public Prestador criar(@Valid @RequestBody Prestador obj){
-	   return prestadorNeg.save(obj);
+	public StatusServico criar(@Valid @RequestBody StatusServico objeto){
+	   return negocio.save(objeto);
 	}
 
 	@DeleteMapping("/{id}")
     public ResponseEntity<Void> remover(@PathVariable int id) {
         
-		Prestador obj = prestadorNeg.findById(id);
-		
+		StatusServico obj = negocio.findById(id);		
 		if (obj == null) {
 			return ResponseEntity.notFound().build();
-		}
-		
-		prestadorNeg.delete(obj);
-	
-		
+		}		
+		negocio.remover(obj);		
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
 }

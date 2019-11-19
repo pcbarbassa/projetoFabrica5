@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,6 +30,9 @@ public class OrdemPagamento implements Serializable {
     
 	@Getter @Setter 
 	private Date data;
+	
+	@Getter @Setter @NotNull @JsonFormat(pattern="yyyy-MM-dd")
+	private Date dataPagamento;
     
 	@Getter @Setter 
 	private Float valor;	

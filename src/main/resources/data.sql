@@ -10,12 +10,12 @@ INSERT INTO "cliente" (id, nome, cpf_cnpj, dt_nascimento, email, endereco_id, id
   (99998, 'Diogo2 Leal', '222.222.222-22', '1990-11-14', 'email2@gmail.com', 99992, '444444-8'),
   (99997, 'Antonio1 Abelardo', '333.333.333-33', '1970-11-14', 'email3@gmail.com', 99994, '6666666-8');
   
-INSERT INTO "tipo_prestador" (id, desativado, descricao) VALUES 
-(99991, false, 'Pintor'),
-(99992, false, 'Eletricista'),
-(99993, false, 'Encanador'),
-(99994, false, 'Pedreiro'),
-(99995, false, 'Jardineiro'); 
+INSERT INTO "tipo_prestador" (id, ativo, descricao) VALUES 
+(99991, true, 'Pintor'),
+(99992, true, 'Eletricista'),
+(99993, true, 'Encanador'),
+(99994, true, 'Pedreiro'),
+(99995, true, 'Jardineiro'); 
 
 INSERT INTO "banco" (cod, banco) VALUES
 (001,'001 - BANCO DO BRASIL S/A'),
@@ -273,3 +273,16 @@ INSERT INTO "prestador" (id, agencia, banco_cod, conta, cpf_cnpj, dt_nascimento,
 (99993, '0003', '001', '0003', '333.111.111-11', '1927-11-14', 'email3@email.com', '3333333-11', 99992,'Prestador Beltrano 3',99991),
 (99994, '0004', '749', '0004', '444.111.111-11', '1928-11-14', 'email4@email.com', '444444-11', 99993,'Prestador Zutano 4',99993),
 (99995, '0005', '749', '0005', '555.111.111-11', '1929-11-14', 'email5@email.com', '5555555-11', 99994,'Prestador Alano 5',99993);
+
+INSERT INTO "status_solicitacao" (id, ativo, descricao) VALUES 
+(99991, true, 'Aguard. Orcamento'),
+(99992, true, 'Aguard. Aprovação'),
+(99993, true, 'Aprovado'),
+(99994, true, 'Rejeitado'); 
+
+INSERT INTO "solicitacao" (id, valor, status_solicitacao_id, descricao, cliente_id, data) VALUES
+(99991, 1500, 99991, 'Pintura de Parede de 2x3 metros.', 99999, '2019-11-19'),
+(99992, 200, 99992, 'Instalacao de 3 Luminarias de LED 30x30cm', 99998, '2019-10-17'),
+(99993, 50.85, 99993, 'Desenvolvimento de sistema para controle de Prestaçao de Servicos', 99997, '2019-09-16'),
+(99994, 125.80, 99994, 'Substrituicao de Cano furado', 99999, '2019-08-15'),
+(99995, 949, 99992, 'Motorista Particular para evento de Gala', 99998, '2019-07-14');

@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,7 +28,7 @@ public class OrdemServico implements Serializable {
 	@Getter @Id @GeneratedValue(strategy=GenerationType.AUTO)  
 	private long id;
     
-	@Getter @Setter 
+	@Getter @Setter @NotNull @JsonFormat(pattern="yyyy-MM-dd")	
 	private Date data;
     
 	@Getter @Setter 

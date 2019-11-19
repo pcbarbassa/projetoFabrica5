@@ -18,7 +18,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class TipoPrestador implements Serializable {
+public class StatusSolicitacao implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Getter @Id	@GeneratedValue(strategy=GenerationType.IDENTITY) 
