@@ -28,7 +28,7 @@ public class Solicitacao implements Serializable {
       private double valorTotal;
       
       @Getter @Setter
-      private int numeroProdutos;
+      private int status;
       
       @Getter @Setter
       private String descricao;
