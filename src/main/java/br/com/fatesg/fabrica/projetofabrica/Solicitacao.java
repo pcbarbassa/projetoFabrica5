@@ -33,9 +33,6 @@ public class Solicitacao implements Serializable {
       @Getter @Setter
       private String descricao;
       
-      @Getter @Setter @OneToOne 
-      private OrdemServico ordemServico;
-      
       @Getter @Setter @OneToOne
       private Cliente cliente;
 }
