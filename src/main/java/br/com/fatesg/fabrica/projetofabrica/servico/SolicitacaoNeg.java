@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.fatesg.fabrica.projetofabrica.Cliente;
 import br.com.fatesg.fabrica.projetofabrica.Solicitacao;
 import br.com.fatesg.fabrica.projetofabrica.repositorio.SolicitacaoRepository;
 
@@ -12,14 +13,14 @@ import br.com.fatesg.fabrica.projetofabrica.repositorio.SolicitacaoRepository;
 public class SolicitacaoNeg {
 	
 	@Autowired
-	public SolicitacaoRepository solicitacaoRepository;
+	public SolicitacaoRepository repository;
 	
-	public List<Solicitacao> findById(int id){
-    	return solicitacaoRepository.findById(id);
+	public Solicitacao findById(long id){
+    	return repository.findById(id);
     }
     
     public Solicitacao findDescricaoById(Long id) {
-    	return solicitacaoRepository.getOne(id);
+    	return repository.getOne(id);
     }
     
     public List<Solicitacao> findByIdOrderByDescricao(String descricao){
@@ -27,7 +28,24 @@ public class SolicitacaoNeg {
     }
     
     public List<Solicitacao> findAll() {
-    	return solicitacaoRepository.findAll();
-    }
+    	return repository.findAll();
+    }   
+    
+    public List<Solicitacao> findClienteById(Long idCliente) {
+    	return repository.findAll();
+    }  
 
+	public Solicitacao save(Solicitacao obj) {
+		repository.save(obj);
+		return obj;
+	}
+		
+	public void removerPorId(long id) {
+		repository.deleteById(id);	
+	}
+	
+	public void remover(Solicitacao obj) {
+		repository.delete(obj);	
+	}
 }
+
