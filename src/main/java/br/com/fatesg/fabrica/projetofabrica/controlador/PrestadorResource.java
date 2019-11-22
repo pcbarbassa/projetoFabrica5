@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.fatesg.fabrica.projetofabrica.Cliente;
 import br.com.fatesg.fabrica.projetofabrica.Prestador;
 import br.com.fatesg.fabrica.projetofabrica.servico.PrestadorNeg;
 @Qualifier
@@ -34,8 +33,13 @@ public class PrestadorResource {
 		return prestadorNeg.findAll();
 	}
 	
+	@GetMapping("/count")
+	public long count() {
+		return prestadorNeg.count();
+	}
+	
 	@GetMapping("/{id}")
-	public ResponseEntity<Prestador> buscar(@PathVariable int id) {
+	public ResponseEntity<Prestador> buscar(@PathVariable long id) {
 		Prestador prestador = prestadorNeg.findById(id);
 		
 		if (prestador == null) {
@@ -48,7 +52,7 @@ public class PrestadorResource {
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<Prestador> atualizar(@PathVariable int id, 
-			@Valid @RequestBody Prestador prestador) {
+			@RequestBody Prestador prestador) {
 		Prestador obj = prestadorNeg.findById(id);
 		
 		if (obj == null) {
@@ -61,11 +65,6 @@ public class PrestadorResource {
 		
 		return ResponseEntity.ok(obj);
 		
-	}
-	
-	@PostMapping
-	public Prestador criar(@Valid @RequestBody Prestador obj){
-	   return prestadorNeg.save(obj);
 	}
 
 	@DeleteMapping("/{id}")

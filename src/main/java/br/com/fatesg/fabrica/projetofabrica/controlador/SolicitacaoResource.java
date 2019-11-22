@@ -43,8 +43,8 @@ public class SolicitacaoResource {
 	}
 	
 	@GetMapping("/cliente/{id}")
-	public ResponseEntity<List<Solicitacao>> buscarPorCliente(@PathVariable long idCliente) {
-		List<Solicitacao> obj = negocio.findClienteById(idCliente);		
+	public ResponseEntity<List<Solicitacao>> buscarPorCliente(@PathVariable long id) {
+		List<Solicitacao> obj = negocio.findByCliente_Id(id);		
 		if (obj == null) {
 			return ResponseEntity.notFound().build();
 		}		

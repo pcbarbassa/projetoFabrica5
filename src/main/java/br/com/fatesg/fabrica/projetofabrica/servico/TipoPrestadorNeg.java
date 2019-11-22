@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.fatesg.fabrica.projetofabrica.Prestador;
 import br.com.fatesg.fabrica.projetofabrica.TipoPrestador;
 import br.com.fatesg.fabrica.projetofabrica.repositorio.TipoPrestadorRepository;
 
@@ -41,5 +42,9 @@ public class TipoPrestadorNeg {
 	
 	public void remover(TipoPrestador obj) {
 		repository.delete(obj);	
+	}
+
+	public TipoPrestador findByDescricao(String descricao) {
+		return repository.findByDescricao(descricao);
 	}
 }

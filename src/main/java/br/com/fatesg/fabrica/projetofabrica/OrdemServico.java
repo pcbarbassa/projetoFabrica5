@@ -37,8 +37,8 @@ public class OrdemServico implements Serializable {
 	@Getter @Setter 
 	private Float valor;
     
-	@Getter @Setter 
-	private int status_servico;
+	@Getter @Setter @OneToOne
+	private StatusServico statusServico;
 	
 	@Getter @Setter @OneToOne 
 	private Prestador prestador;

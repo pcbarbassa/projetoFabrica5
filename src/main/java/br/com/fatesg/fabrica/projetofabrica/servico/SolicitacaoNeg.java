@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.fatesg.fabrica.projetofabrica.Cliente;
 import br.com.fatesg.fabrica.projetofabrica.Solicitacao;
 import br.com.fatesg.fabrica.projetofabrica.repositorio.SolicitacaoRepository;
 
@@ -31,8 +30,8 @@ public class SolicitacaoNeg {
     	return repository.findAll();
     }   
     
-    public List<Solicitacao> findClienteById(Long idCliente) {
-    	return repository.findAll();
+    public List<Solicitacao> findByCliente_Id(Long id) {
+    	return repository.findByCliente_Id(id);
     }  
 
 	public Solicitacao save(Solicitacao obj) {

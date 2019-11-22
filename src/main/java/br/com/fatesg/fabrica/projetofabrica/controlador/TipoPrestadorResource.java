@@ -57,8 +57,17 @@ public class TipoPrestadorResource {
 	}
 	
 	@PostMapping
-	public TipoPrestador criar(@Valid @RequestBody TipoPrestador objeto){
-	   return negocio.save(objeto);
+	public ResponseEntity<TipoPrestador> criar(@Valid @RequestBody TipoPrestador objeto){
+		   
+		TipoPrestador existente = negocio.findByDescricao(objeto.getDescricao());
+			
+			if (existente == null) {
+				negocio.save(objeto);
+				return ResponseEntity.ok(objeto);
+			} else {
+				return ResponseEntity.status(HttpStatus.CONFLICT).body(existente);
+				
+			}		
 	}
 
 	@DeleteMapping("/{id}")

@@ -14,7 +14,7 @@ public class PrestadorNeg {
 	@Autowired
 	public PrestadorRepository repository;
 	
-	public Prestador findById(int id){
+	public Prestador findById(long id){
     	return repository.findById(id);
     }
     
@@ -43,5 +43,9 @@ public class PrestadorNeg {
 	public void delete(Prestador obj) {
 		repository.delete(obj);
 	
+	}
+	
+	public long count() {
+		return repository.count();
 	}
 }

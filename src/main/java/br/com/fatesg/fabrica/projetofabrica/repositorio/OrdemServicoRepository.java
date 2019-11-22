@@ -16,5 +16,9 @@ public interface OrdemServicoRepository extends JpaRepository<OrdemServico, Long
 	OrdemServico findDescricaoById(@Param("id") Long id);
       
     List<OrdemServico> findByIdOrderByDescricao(@Param("id") String nome);
+    
+    List<OrdemServico> findByPrestador_Id(@Param("id") long id);
+    
+    List<OrdemServico> findBySolicitacao_Cliente_Id(@Param("id") long id);
   
 }

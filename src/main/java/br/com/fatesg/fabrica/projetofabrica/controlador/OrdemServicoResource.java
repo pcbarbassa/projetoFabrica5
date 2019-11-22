@@ -22,7 +22,7 @@ import br.com.fatesg.fabrica.projetofabrica.OrdemServico;
 import br.com.fatesg.fabrica.projetofabrica.servico.OrdemServicoNeg;
 @Qualifier
 @RestController
-@RequestMapping(value="/api/ordemservico", path="/api/ordemservico")
+@RequestMapping(value="/api/ordensservicos", path="/api/ordensservicos")
 public class OrdemServicoResource {
 		
 	@Autowired
@@ -36,6 +36,30 @@ public class OrdemServicoResource {
 	@GetMapping("/{id}")
 	public ResponseEntity<OrdemServico> buscar(@PathVariable int id) {
 		OrdemServico obj = negocio.findById(id);
+		
+		if (obj == null) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		return ResponseEntity.ok(obj);
+		
+	}
+	
+	@GetMapping("/prestador/{id}")
+	public ResponseEntity<List<OrdemServico>> buscarPorPrestador(@PathVariable long id) {
+		List<OrdemServico> obj = negocio.findByPrestador_Id(id);
+		
+		if (obj == null) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		return ResponseEntity.ok(obj);
+		
+	}
+	
+	@GetMapping("/solicitacao/cliente/{id}")
+	public ResponseEntity<List<OrdemServico>> buscarPorCliente(@PathVariable long id) {
+		List<OrdemServico> obj = negocio.findBySolicitacao_Cliente_Id(id);
 		
 		if (obj == null) {
 			return ResponseEntity.notFound().build();

@@ -278,7 +278,13 @@ INSERT INTO "status_solicitacao" (id, ativo, descricao) VALUES
 (99991, true, 'Aguard. Orcamento'),
 (99992, true, 'Aguard. Aprovação'),
 (99993, true, 'Aprovado'),
-(99994, true, 'Rejeitado'); 
+(99994, true, 'Rejeitado'), 
+(99995, true, 'Cancelado'); 
+
+INSERT INTO "status_servico" (id, ativo, descricao) VALUES 
+(99991, true, 'Em Andamento'),
+(99992, true, 'Concluido'),
+(99993, true, 'Cancelado'); 
 
 INSERT INTO "solicitacao" (id, valor, status_solicitacao_id, descricao, cliente_id, data) VALUES
 (99991, 1500, 99991, 'Pintura de Parede de 2x3 metros.', 99999, '2019-11-19'),
@@ -286,3 +292,10 @@ INSERT INTO "solicitacao" (id, valor, status_solicitacao_id, descricao, cliente_
 (99993, 50.85, 99993, 'Desenvolvimento de sistema para controle de Prestaçao de Servicos', 99997, '2019-09-16'),
 (99994, 125.80, 99994, 'Substrituicao de Cano furado', 99999, '2019-08-15'),
 (99995, 949, 99992, 'Motorista Particular para evento de Gala', 99998, '2019-07-14');
+
+INSERT INTO "ordem_servico" (id, valor, status_servico_id, descricao, prestador_id, solicitacao_id, data) VALUES
+(99991, 1500, 99991, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit', 99991, 99995,'2019-11-19'),
+(99992, 200, 99992, 'Quisque maximus tellus vitae placerat scelerisque', 99992, 99995,'2019-10-17'),
+(99993, 50.85, 99993, 'Nullam tincidunt urna sed luctus lacinia. Fusce sit amet nibh nec leo vulputate ornare', 99992, 99991,'2019-09-16'),
+(99994, 125.80, 99991, 'Nam sodales ut nibh a finibus. Maecenas facilisis dapibus dui in placerat.', 99993, 99992,'2019-08-15'),
+(99995, 949, 99992, 'Mauris sed ex eget ligula feugiat semper sit amet ut felis. Vestibulum imperdiet non neque eget sodales', 99995, 99993,'2019-07-14');

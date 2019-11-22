@@ -16,5 +16,7 @@ public interface SolicitacaoRepository extends JpaRepository<Solicitacao, Long> 
       Solicitacao findDescricaoById(@Param("id") Long id);
       
       List<Solicitacao> findByIdOrderByDescricao(@Param("id") String descricao);
+      
+      List<Solicitacao> findByCliente_Id(@Param("id") long id);
   
 }

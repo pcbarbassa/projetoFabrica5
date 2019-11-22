@@ -29,7 +29,14 @@ public class OrdemServicoNeg {
     public List<OrdemServico> findAll() {
     	return repository.findAll();
     }   
-
+    
+    public List<OrdemServico> findByPrestador_Id(Long id) {
+    	return repository.findByPrestador_Id(id);
+    }
+    
+    public List<OrdemServico> findBySolicitacao_Cliente_Id(Long id) {
+    	return repository.findBySolicitacao_Cliente_Id(id);
+    }    
 
 	public OrdemServico save(OrdemServico obj) {
 		repository.save(obj);
