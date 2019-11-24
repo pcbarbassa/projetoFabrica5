@@ -34,7 +34,7 @@ public class StatusSolicitacaoResource {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<StatusSolicitacao> buscar(@PathVariable long id) {
+	public ResponseEntity<StatusSolicitacao> buscar(@PathVariable int id) {
 		StatusSolicitacao obj = negocio.findById(id);		
 		if (obj == null) {
 			return ResponseEntity.notFound().build();

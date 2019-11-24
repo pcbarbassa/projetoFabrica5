@@ -34,7 +34,7 @@ public class TipoPrestadorResource {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<TipoPrestador> buscar(@PathVariable long id) {
+	public ResponseEntity<TipoPrestador> buscar(@PathVariable int id) {
 		TipoPrestador obj = negocio.findById(id);		
 		if (obj == null) {
 			return ResponseEntity.notFound().build();

@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.fatesg.fabrica.projetofabrica.Prestador;
-import br.com.fatesg.fabrica.projetofabrica.TipoPrestador;
 import br.com.fatesg.fabrica.projetofabrica.servico.PrestadorNeg;
 @Qualifier
 @RestController
@@ -40,7 +39,7 @@ public class PrestadorResource {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Prestador> buscar(@PathVariable long id) {
+	public ResponseEntity<Prestador> buscar(@PathVariable int id) {
 		Prestador prestador = prestadorNeg.findById(id);
 		
 		if (prestador == null) {
@@ -96,9 +95,5 @@ public class PrestadorResource {
 		
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
-	
-	@RequestMapping("/cadastrarPrestador")
-	public String form() {
-		return "contrato/formPrestador";
-	}
+
 }

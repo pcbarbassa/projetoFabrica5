@@ -7,12 +7,11 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import br.com.fatesg.fabrica.projetofabrica.StatusServico;
-import br.com.fatesg.fabrica.projetofabrica.StatusSolicitacao;
   
 @Repository
 public interface StatusServicoRepository extends JpaRepository<StatusServico, Long> {
        
-	StatusServico findById(@Param("id") long id);
+	StatusServico findById(@Param("id") int id);
                
 	StatusServico findDescricaoById(@Param("id") Long id);
       

@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.fatesg.fabrica.projetofabrica.Prestador;
 import br.com.fatesg.fabrica.projetofabrica.TipoPrestador;
 import br.com.fatesg.fabrica.projetofabrica.repositorio.TipoPrestadorRepository;
 
@@ -15,7 +14,7 @@ public class TipoPrestadorNeg {
 	@Autowired
 	public TipoPrestadorRepository repository;
 	
-	public TipoPrestador findById(long id){
+	public TipoPrestador findById(int id){
     	return repository.findById(id);
     }
     

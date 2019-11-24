@@ -34,7 +34,7 @@ public class OrdemServicoResource {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<OrdemServico> buscar(@PathVariable long id) {
+	public ResponseEntity<OrdemServico> buscar(@PathVariable int id) {
 		OrdemServico obj = negocio.findById(id);
 		
 		if (obj == null) {

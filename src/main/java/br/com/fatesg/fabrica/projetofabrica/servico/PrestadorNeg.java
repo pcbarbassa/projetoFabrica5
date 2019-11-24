@@ -14,7 +14,7 @@ public class PrestadorNeg {
 	@Autowired
 	public PrestadorRepository repository;
 	
-	public Prestador findById(long id){
+	public Prestador findById(int id){
     	return repository.findById(id);
     }
     

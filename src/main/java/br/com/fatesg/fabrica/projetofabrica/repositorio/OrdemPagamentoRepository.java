@@ -12,7 +12,7 @@ import br.com.fatesg.fabrica.projetofabrica.OrdemPagamento;
 @Repository
 public interface OrdemPagamentoRepository extends JpaRepository<OrdemPagamento, Long> {
        
-	OrdemPagamento findById(@Param("id") long id);
+	OrdemPagamento findById(@Param("id") int id);
                
 	OrdemPagamento findDescricaoById(@Param("id") Long id);
       

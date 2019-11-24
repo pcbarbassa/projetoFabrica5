@@ -11,7 +11,7 @@ import br.com.fatesg.fabrica.projetofabrica.Prestador;
 @Repository
 public interface PrestadorRepository extends JpaRepository<Prestador, Long> {
        
-	Prestador findById(@Param("id") long id);
+	Prestador findById(@Param("id") int id);
                
     Prestador findDescricaoById(@Param("id") Long id);
       

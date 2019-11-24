@@ -14,7 +14,7 @@ public class OrdemPagamentoNeg {
 	@Autowired
 	public OrdemPagamentoRepository repository;
 	
-	public OrdemPagamento findById(long id){
+	public OrdemPagamento findById(int id){
     	return repository.findById(id);
     }
     

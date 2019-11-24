@@ -11,7 +11,7 @@ import br.com.fatesg.fabrica.projetofabrica.Solicitacao;
 @Repository
 public interface SolicitacaoRepository extends JpaRepository<Solicitacao, Long> {
        
-      Solicitacao findById(@Param("id") long id);
+      Solicitacao findById(@Param("id") int id);
             
       Solicitacao findDescricaoById(@Param("id") Long id);
       

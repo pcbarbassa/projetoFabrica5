@@ -11,9 +11,7 @@ import br.com.fatesg.fabrica.projetofabrica.TipoPrestador;
 @Repository
 public interface TipoPrestadorRepository extends JpaRepository<TipoPrestador, Long> {
        
-	TipoPrestador findById(@Param("id") long id);
-               
-	TipoPrestador findDescricaoById(@Param("id") Long id);
+	TipoPrestador findById(@Param("id") int id);
       
     List<TipoPrestador> findByIdOrderByDescricao(@Param("id") String descricao);
 

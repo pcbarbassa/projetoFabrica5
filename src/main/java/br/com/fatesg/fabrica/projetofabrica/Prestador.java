@@ -29,7 +29,7 @@ public class Prestador implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Getter @Id @GeneratedValue(strategy=GenerationType.AUTO) 
-	private long id;     
+	private Long id;     
 	
 	@Getter @Setter @NotNull 
 	private String nome;	

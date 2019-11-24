@@ -11,7 +11,7 @@ import br.com.fatesg.fabrica.projetofabrica.StatusSolicitacao;
 @Repository
 public interface StatusSolicitacaoRepository extends JpaRepository<StatusSolicitacao, Long> {
        
-	StatusSolicitacao findById(@Param("id") long id);
+	StatusSolicitacao findById(@Param("id") int id);
                
 	StatusSolicitacao findDescricaoById(@Param("id") Long id);
       

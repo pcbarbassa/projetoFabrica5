@@ -11,7 +11,7 @@ import br.com.fatesg.fabrica.projetofabrica.OrdemServico;
 @Repository
 public interface OrdemServicoRepository extends JpaRepository<OrdemServico, Long> {
        
-	OrdemServico findById(@Param("id") long id);
+	OrdemServico findById(@Param("id") int id);
                
 	OrdemServico findDescricaoById(@Param("id") Long id);
       
