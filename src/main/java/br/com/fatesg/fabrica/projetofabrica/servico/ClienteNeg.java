@@ -13,7 +13,7 @@ public class ClienteNeg {
 	@Autowired
 	public ClienteRepository repository;
 	
-	public Cliente findById(int id){
+	public Cliente findById(Integer id){
     	return repository.findById(id);
     }
     

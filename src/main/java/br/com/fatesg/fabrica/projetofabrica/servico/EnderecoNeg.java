@@ -14,7 +14,7 @@ public class EnderecoNeg {
 	@Autowired
 	public EnderecoRepository repository;
 	
-	public Endereco findById(int id){
+	public Endereco findById(Integer id){
     	return repository.findById(id);
     }
     

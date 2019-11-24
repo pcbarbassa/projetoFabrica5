@@ -14,7 +14,7 @@ public class StatusServicoNeg {
 	@Autowired
 	public StatusServicoRepository repository;
 	
-	public StatusServico findById(int id){
+	public StatusServico findById(Integer id){
     	return repository.findById(id);
     }
     

@@ -14,7 +14,7 @@ public class TipoPrestadorNeg {
 	@Autowired
 	public TipoPrestadorRepository repository;
 	
-	public TipoPrestador findById(int id){
+	public TipoPrestador findById(Integer id){
     	return repository.findById(id);
     }
     

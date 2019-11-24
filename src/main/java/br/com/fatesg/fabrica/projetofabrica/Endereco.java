@@ -21,7 +21,7 @@ public class Endereco implements Serializable {
 	private static final long serialVersionUID = 1L;	
 	 
 	@Getter @Id @GeneratedValue(strategy=GenerationType.AUTO)  
-	private Long id;     
+	private Integer id;     
     
 	@Getter @Setter 
 	private String logradouro;

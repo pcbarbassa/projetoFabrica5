@@ -14,7 +14,7 @@ public class SolicitacaoNeg {
 	@Autowired
 	public SolicitacaoRepository repository;
 	
-	public Solicitacao findById(int id){
+	public Solicitacao findById(Integer id){
     	return repository.findById(id);
     }
     

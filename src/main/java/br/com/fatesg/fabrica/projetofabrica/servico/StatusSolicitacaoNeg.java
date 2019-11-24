@@ -14,7 +14,7 @@ public class StatusSolicitacaoNeg {
 	@Autowired
 	public StatusSolicitacaoRepository repository;
 	
-	public StatusSolicitacao findById(int id){
+	public StatusSolicitacao findById(Integer id){
     	return repository.findById(id);
     }
     

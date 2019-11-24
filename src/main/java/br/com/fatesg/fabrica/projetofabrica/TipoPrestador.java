@@ -22,7 +22,7 @@ public class TipoPrestador implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Getter @Id	@GeneratedValue(strategy=GenerationType.IDENTITY) 
-	private Long id;
+	private Integer id;
 	
 	@Getter @Setter @Column(nullable=false, length=512, unique = true) 
 	private String descricao;
