@@ -96,4 +96,9 @@ public class PrestadorResource {
 		
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
+	
+	@RequestMapping("/cadastrarPrestador")
+	public String form() {
+		return "contrato/formPrestador";
+	}
 }

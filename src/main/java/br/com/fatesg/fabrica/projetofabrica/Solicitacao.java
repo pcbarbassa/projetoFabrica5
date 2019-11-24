@@ -42,4 +42,7 @@ public class Solicitacao implements Serializable {
       
       @Getter @Setter @OneToOne
       private Cliente cliente;
+      
+      @Getter @Setter @OneToOne
+      private TipoPrestador tipoPrestador;
 }
