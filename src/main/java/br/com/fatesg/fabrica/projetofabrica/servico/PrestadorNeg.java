@@ -36,16 +36,18 @@ public class PrestadorNeg {
 	}
 		
 	public void deleteById(long id) {
-		repository.deleteById(id);
-	
+		repository.deleteById(id);	
 	}
 	
 	public void delete(Prestador obj) {
-		repository.delete(obj);
-	
+		repository.delete(obj);	
 	}
 	
 	public long count() {
 		return repository.count();
+	}
+
+	public Prestador findByCpfCnpj(String cpfCnpj) {
+		return repository.findByCpfCnpj(cpfCnpj);
 	}
 }

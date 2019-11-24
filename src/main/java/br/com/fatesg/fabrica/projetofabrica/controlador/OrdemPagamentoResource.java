@@ -34,7 +34,7 @@ public class OrdemPagamentoResource {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<OrdemPagamento> buscar(@PathVariable int id) {
+	public ResponseEntity<OrdemPagamento> buscar(@PathVariable long id) {
 		OrdemPagamento obj = negocio.findById(id);
 		
 		if (obj == null) {

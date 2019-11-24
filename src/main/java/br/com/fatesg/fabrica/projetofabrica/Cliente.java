@@ -33,14 +33,14 @@ public class Cliente implements Serializable {
 	@Getter @Setter @NotNull
 	private String nome;
     	    
-	@Getter @Setter @NotNull @Column(nullable=false, length=20, unique = true)
-	private String cpf_cnpj;    	
+	@Getter @Setter @NotNull @Column(nullable=false, length=16, unique = true)
+	private String cpfCnpj;    	
     
     @Getter @Setter @NotNull @Email @Column(nullable=false, length=100, unique = true)
     private String email;
 	    	
     @NotNull @Getter @Setter @JsonFormat(pattern="yyyy-MM-dd")
-    private Date dt_nascimento;	
+    private Date dtNascimento;	
     	
 	@Getter @Setter 
 	private String identidade;
@@ -50,6 +50,6 @@ public class Cliente implements Serializable {
 	
 	@Getter @Column(insertable=false, updatable=false)
 	@org.hibernate.annotations.Generated(org.hibernate.annotations.GenerationTime.INSERT)
-	private Date dt_cadastro;
+	private Date dtCadastro;
 	    
 }

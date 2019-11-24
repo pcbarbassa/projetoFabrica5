@@ -14,7 +14,7 @@ public class OrdemServicoNeg {
 	@Autowired
 	public OrdemServicoRepository repository;
 	
-	public OrdemServico findById(int id){
+	public OrdemServico findById(long id){
     	return repository.findById(id);
     }
     

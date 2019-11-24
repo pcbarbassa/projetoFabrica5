@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.fatesg.fabrica.projetofabrica.Prestador;
+import br.com.fatesg.fabrica.projetofabrica.TipoPrestador;
 import br.com.fatesg.fabrica.projetofabrica.servico.PrestadorNeg;
 @Qualifier
 @RestController
@@ -65,6 +66,20 @@ public class PrestadorResource {
 		
 		return ResponseEntity.ok(obj);
 		
+	}
+	
+	@PostMapping
+	public ResponseEntity<Prestador> criar(@Valid @RequestBody Prestador objeto){
+		   
+		Prestador existente = prestadorNeg.findByCpfCnpj(objeto.getCpfCnpj());
+			
+			if (existente == null) {
+				prestadorNeg.save(objeto);
+				return ResponseEntity.ok(objeto);
+			} else {
+				return ResponseEntity.status(HttpStatus.CONFLICT).body(existente);
+				
+			}		
 	}
 
 	@DeleteMapping("/{id}")

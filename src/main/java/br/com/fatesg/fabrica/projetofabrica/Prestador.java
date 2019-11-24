@@ -34,14 +34,14 @@ public class Prestador implements Serializable {
 	@Getter @Setter @NotNull 
 	private String nome;	
 	
-	@Getter @Setter @NotNull @Column(nullable=false, length=512, unique=true)  
-	private String cpf_cnpj;
+	@Getter @Setter @NotNull @Column(nullable=false, length=16, unique=true)  
+	private String cpfCnpj;
 	
 	@Getter @Setter @NotNull @Email 
 	private String email;
 	
 	@Getter @Setter @NotNull @JsonFormat(pattern="yyyy-MM-dd")	  
-	private Date dt_nascimento;
+	private Date dtNascimento;
 	
 	@Getter @Setter @NotNull  
 	private String identidade;
@@ -63,6 +63,6 @@ public class Prestador implements Serializable {
 	
 	@Getter @Column(insertable=false, updatable=false)
 	@org.hibernate.annotations.Generated(org.hibernate.annotations.GenerationTime.INSERT)
-	private Date dt_cadastro;
+	private Date dtCadastro;
 	    
 }

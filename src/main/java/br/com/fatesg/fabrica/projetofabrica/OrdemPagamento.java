@@ -28,10 +28,10 @@ public class OrdemPagamento implements Serializable {
 	@Getter @Id @GeneratedValue(strategy=GenerationType.AUTO)  
 	private long id;
     
-	@Getter @Setter 
+	@Getter @Setter @NotNull @JsonFormat(pattern="yyyy-MM-dd")
 	private Date data;
 	
-	@Getter @Setter @NotNull @JsonFormat(pattern="yyyy-MM-dd")
+	@Getter @Setter @JsonFormat(pattern="yyyy-MM-dd")
 	private Date dataPagamento;
     
 	@Getter @Setter 

@@ -299,3 +299,10 @@ INSERT INTO "ordem_servico" (id, valor, status_servico_id, descricao, prestador_
 (99993, 50.85, 99993, 'Nullam tincidunt urna sed luctus lacinia. Fusce sit amet nibh nec leo vulputate ornare', 99992, 99991,'2019-09-16'),
 (99994, 125.80, 99991, 'Nam sodales ut nibh a finibus. Maecenas facilisis dapibus dui in placerat.', 99993, 99992,'2019-08-15'),
 (99995, 949, 99992, 'Mauris sed ex eget ligula feugiat semper sit amet ut felis. Vestibulum imperdiet non neque eget sodales', 99995, 99993,'2019-07-14');
+
+INSERT INTO "ordem_pagamento" (id, data, data_pagamento, valor, ordem_servico_id) VALUES
+(99991, '2019-11-19', null, 150.01, 99991),
+(99992, '2018-11-18', null, 140.02, 99993),
+(99993, '2017-11-17', null, 130.03, 99993),
+(99994, '2016-11-16', null, 120.04, 99991),
+(99995, '2015-11-15', null, 110.05, 99995);
