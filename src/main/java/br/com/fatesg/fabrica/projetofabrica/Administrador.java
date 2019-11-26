@@ -25,46 +25,31 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Prestador implements Serializable {
-	private static final long serialVersionUID = 1L;
-	
+public class Administrador implements Serializable {
+	private static final long serialVersionUID = 1L;	
+	 
 	@Getter @Id @GeneratedValue(strategy=GenerationType.AUTO) 
 	private Integer id;     
-	
-	@Getter @Setter @NotNull 
-	private String nome;	
-	
-	@Getter @Setter @NotNull @Column(nullable=false, length=16, unique=true)  
-	private String cpfCnpj;
-	
-	@Getter @Setter @NotNull @Email 
-	private String email;
-	
-	@Getter @Setter @NotNull @JsonFormat(pattern="yyyy-MM-dd")	  
-	private Date dtNascimento;
-	
-	@Getter @Setter @NotNull  
+    
+	@Getter @Setter @NotNull
+	private String nome;
+    	    
+	@Getter @Setter @NotNull @Column(nullable=false, length=16, unique=true)
+	private String cpfCnpj;    	
+    
+    @Getter @Setter @NotNull @Email @Column(nullable=false, length=100, unique=true)
+    private String email;
+	    	
+    @NotNull @Getter @Setter @JsonFormat(pattern="yyyy-MM-dd")
+    private Date dtNascimento;	
+    	
+	@Getter @Setter 
 	private String identidade;
-	
+    
 	@Getter @Setter @ManyToOne
 	private Endereco endereco;
 	
-	@Getter @Setter @NotNull @OneToOne
-	private Banco banco;
-	
-	@Getter @Setter @NotNull 
-	private String agencia;
-	
-	@Getter @Setter @NotNull 
-	private String conta;
-	
-	@Getter @Setter
-	private String telefone;
-	
-	@Getter @Setter @OneToOne  
-	private TipoPrestador tipoPrestador;
-	
-	@Getter @Setter @OneToOne 
+	@Getter @Setter @OneToOne
 	private Usuario usuario;
 	
 	@Getter @Column(insertable=false, updatable=false)
