@@ -21,9 +21,9 @@ public class Banco implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Getter @Id @GeneratedValue(strategy=GenerationType.AUTO) 
-	private Integer cod;     
+	private Integer id;     
     
-	@NotNull 
-	private String banco;
+	@Getter @NotNull 
+	private String nome;
 
 }

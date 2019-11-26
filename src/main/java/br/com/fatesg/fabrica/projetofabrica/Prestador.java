@@ -58,6 +58,9 @@ public class Prestador implements Serializable {
 	@Getter @Setter @NotNull 
 	private String conta;
 	
+	@Getter @Setter
+	private String telefone;
+	
 	@Getter @Setter @OneToOne  
 	private TipoPrestador tipoPrestador;
 	
