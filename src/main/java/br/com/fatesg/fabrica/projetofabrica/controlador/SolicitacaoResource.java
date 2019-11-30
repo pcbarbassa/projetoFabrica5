@@ -69,6 +69,26 @@ public class SolicitacaoResource {
 		return ResponseEntity.ok(obj);		
 	}
 	
+	@GetMapping("/tipoPrestadorId/{tipoPrestadorId}/statusSolicitacaoId/{statusSolicitacaoId}")
+	public ResponseEntity<List<Solicitacao>> buscarTipoPrestadorEStatusSolicitacao(@PathVariable Integer tipoPrestadorId, 
+			@PathVariable Integer statusSolicitacaoId) {
+		List<Solicitacao> obj = negocio.findByTipoPrestador_IdAndStatusSolicitacao_Id(tipoPrestadorId,statusSolicitacaoId);		
+		if (obj == null) {
+			return ResponseEntity.notFound().build();
+		}		
+		return ResponseEntity.ok(obj);		
+	}
+	
+	@GetMapping("/statusSolicitacaoId/{tipoPrestadorid}/tipoPrestadorId/{tipoPrestadorid}")
+	public ResponseEntity<List<Solicitacao>> buscarStatusSolicitacaoETipoPrestador(@PathVariable Integer statusSolicitacaoId, 
+			@PathVariable Integer tipoPrestadorId) {
+		List<Solicitacao> obj = negocio.findByStatusSolicitacao_IdAndTipoPrestador_Id(statusSolicitacaoId,tipoPrestadorId);		
+		if (obj == null) {
+			return ResponseEntity.notFound().build();
+		}		
+		return ResponseEntity.ok(obj);		
+	}
+	
 	@PutMapping("/{id}")
 	public ResponseEntity<Solicitacao> atualizar(@PathVariable int id, 
 			@Valid @RequestBody Solicitacao obj) {

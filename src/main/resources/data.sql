@@ -15,14 +15,6 @@ INSERT INTO "administrador" (id, nome, cpf_cnpj, dt_nascimento, email, endereco_
   (99998, 'Diogo Leal', '555.222.222-22', '1990-11-14', 'email2@gmail.com', 99992, '8585858-8','123456'),
   (99997, 'Antonio Abelardo', '666.333.333-33', '1970-10-14', 'email3@gmail.com', 99994, '96969696-8','123456');
   
-INSERT INTO "tipo_prestador" (id, ativo, descricao) VALUES 
-(99991, true, 'Pintor'),
-(99992, false, 'Eletricista'),
-(99993, false, 'Encanador'),
-(99994, false, 'Pedreiro'),
-(99995, false, 'Jardineiro'), 
-(99996, false, 'Acendedor de Lampadas'),
-(99997, false, 'Empurrador de Carrinhos');
 
 INSERT INTO "banco" (id, nome) VALUES
 (001,'001 - BANCO DO BRASIL S/A'),
@@ -273,7 +265,18 @@ INSERT INTO "banco" (id, nome) VALUES
 (755,'755 - BANCO MERRILL LYNCH S.A'),
 (756,'756 - BANCO COOPERATIVO DO BRASIL S.A.'),
 (757,'757 - BANCO KEB DO BRASIL S.A.');
-  
+
+INSERT INTO "tipo_prestador" (id, ativo, descricao) VALUES 
+(99991, true, 'Pintor'),
+(99992, false, 'Eletricista'),
+(99993, false, 'Encanador'),
+(99994, false, 'Pedreiro'),
+(99995, false, 'Jardineiro'), 
+(99996, false, 'Acendedor de Lampadas'),
+(99997, false, 'Empurrador de Carrinhos'),
+(99998, false, 'Desenvolvedor de Sistemas'),
+(99910, false, 'Motorista Particular');
+
 INSERT INTO "prestador" (id, agencia, banco_id, conta, cpf_cnpj, dt_nascimento, email, identidade, telefone, endereco_id, nome, tipo_prestador_id, senha) VALUES
 (99991, '0001', '749', '0001', '111.111.111-11', '1925-11-14', 'email1@email.com', '111111-11', '9999-8888', 99990,'Prestador Fulano 1',99991, '123456'),
 (99992, '0002', '070', '0002', '222.111.111-11', '1926-11-14', 'email2@email.com', '222222-11',  '8888-7777', 99991,'Prestador Ciclano 2',99992, '123456'),
@@ -293,12 +296,12 @@ INSERT INTO "status_servico" (id, ativo, descricao) VALUES
 (99992, true, 'Concluido'),
 (99993, true, 'Cancelado'); 
 
-INSERT INTO "solicitacao" (id, valor, status_solicitacao_id, descricao, cliente_id, data) VALUES
-(99991, 1500, 99991, 'Pintura de Parede de 2x3 metros.', 99999, '2019-11-19'),
-(99992, 200, 99992, 'Instalacao de 3 Luminarias de LED 30x30cm', 99998, '2019-10-17'),
-(99993, 50.85, 99993, 'Desenvolvimento de sistema para controle de Prestaçao de Servicos', 99997, '2019-09-16'),
-(99994, 125.80, 99994, 'Substrituicao de Cano furado', 99999, '2019-08-15'),
-(99995, 949, 99992, 'Motorista Particular para evento de Gala', 99998, '2019-07-14');
+INSERT INTO "solicitacao" (id, valor, status_solicitacao_id, descricao, cliente_id, tipo_prestador_id, data) VALUES
+(99991, 1500, 99991, 'Pintura de Parede de 2x3 metros.', 99999, 99991, '2019-11-19'),
+(99992, 200, 99992, 'Instalacao de 3 Luminarias de LED 30x30cm', 99998, 99992, '2019-10-17'),
+(99993, 50.85, 99993, 'Desenvolvimento de sistema para controle de Prestaçao de Servicos', 99997, 99998, '2019-09-16'),
+(99994, 125.80, 99994, 'Substrituicao de Cano furado', 99999, 99993, '2019-08-15'),
+(99995, 949, 99992, 'Motorista Particular para evento de Gala', 99998, 99910, '2019-07-14');
 
 INSERT INTO "ordem_servico" (id, valor, status_servico_id, descricao, prestador_id, solicitacao_id, data) VALUES
 (99991, 1500, 99991, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit', 99991, 99995,'2019-11-19'),

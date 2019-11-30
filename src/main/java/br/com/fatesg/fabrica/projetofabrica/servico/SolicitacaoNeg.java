@@ -58,5 +58,13 @@ public class SolicitacaoNeg {
 	public List<Solicitacao> findByStatusSolicitacao_Id(int id) {
 		return repository.findByStatusSolicitacao_Id(id);
 	}
+
+	public List<Solicitacao> findByTipoPrestador_IdAndStatusSolicitacao_Id(Integer tipoPrestadorId, Integer statusSolicitacaoId) {
+		return repository.findByTipoPrestador_IdAndStatusSolicitacao_Id(tipoPrestadorId,statusSolicitacaoId);
+	}
+
+	public List<Solicitacao> findByStatusSolicitacao_IdAndTipoPrestador_Id(Integer tipoPrestadorId, Integer statusSolicitacaoId) {
+		return repository.findByStatusSolicitacao_IdAndTipoPrestador_Id(tipoPrestadorId,statusSolicitacaoId);
+	}
 }
 

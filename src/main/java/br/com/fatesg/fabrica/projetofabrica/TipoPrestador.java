@@ -1,6 +1,7 @@
 package br.com.fatesg.fabrica.projetofabrica;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,5 +30,5 @@ public class TipoPrestador implements Serializable {
 	
     @Getter @Setter 
     private boolean ativo;     
-    
+       
 }
