@@ -34,8 +34,8 @@ public class SolicitacaoResource {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Solicitacao> buscar(@PathVariable int id) {
-		Solicitacao obj = negocio.findById(id);		
+	public ResponseEntity<List<Solicitacao>> buscar(@PathVariable int id) {
+		List<Solicitacao> obj = negocio.findAllOrderByStatusSolicitacao_Id(id);		
 		if (obj == null) {
 			return ResponseEntity.notFound().build();
 		}		
@@ -43,8 +43,26 @@ public class SolicitacaoResource {
 	}
 	
 	@GetMapping("/cliente/{id}")
-	public ResponseEntity<List<Solicitacao>> buscarPorCliente(@PathVariable long id) {
+	public ResponseEntity<List<Solicitacao>> buscarPorCliente(@PathVariable int id) {
 		List<Solicitacao> obj = negocio.findByCliente_Id(id);		
+		if (obj == null) {
+			return ResponseEntity.notFound().build();
+		}		
+		return ResponseEntity.ok(obj);		
+	}
+	
+	@GetMapping("/statussolicitacao/{id}")
+	public ResponseEntity<List<Solicitacao>> buscarPorStatus(@PathVariable int id) {
+		List<Solicitacao> obj = negocio.findByStatusSolicitacao_Id(id);		
+		if (obj == null) {
+			return ResponseEntity.notFound().build();
+		}		
+		return ResponseEntity.ok(obj);		
+	}
+	
+	@GetMapping("/tipoprestador/{id}")
+	public ResponseEntity<List<Solicitacao>> buscarTipoPrestador(@PathVariable int id) {
+		List<Solicitacao> obj = negocio.findByTipoPrestador_Id(id);		
 		if (obj == null) {
 			return ResponseEntity.notFound().build();
 		}		

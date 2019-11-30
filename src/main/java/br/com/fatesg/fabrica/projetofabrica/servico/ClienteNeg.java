@@ -44,4 +44,12 @@ public class ClienteNeg {
 		repository.delete(cliente);
 	
 	}
+
+	public Cliente findByCpfCnpj(String cpfCnpj) {
+		return repository.findByCpfCnpj(cpfCnpj);
+	}
+
+	public Cliente findByEmail(String cpfCnpj) {
+		return repository.findByEmail(cpfCnpj);
+	}
 }

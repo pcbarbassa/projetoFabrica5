@@ -28,6 +28,12 @@ public class Endereco implements Serializable {
     
 	@Getter @Setter 
 	private String cep;	
+	
+	@Getter @Setter 
+	private String lat;	
+	
+	@Getter @Setter 
+	private String lon;	
     
 	@Getter @Setter 
 	private String cidade;

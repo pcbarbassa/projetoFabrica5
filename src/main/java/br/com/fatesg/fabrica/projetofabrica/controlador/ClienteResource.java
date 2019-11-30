@@ -63,8 +63,20 @@ public class ClienteResource {
 	}
 	
 	@PostMapping
-	public Cliente criar(@Valid @RequestBody Cliente cliente){
-	   return negocio.save(cliente);
+	public ResponseEntity<Cliente> criar(@Valid @RequestBody Cliente objeto){
+	   
+		Cliente existente = negocio.findByCpfCnpj(objeto.getCpfCnpj());
+		
+		if (existente == null) {
+			existente = negocio.findByEmail(objeto.getEmail());
+		}
+		
+		if (existente == null) {
+			negocio.save(objeto);
+			return ResponseEntity.ok(objeto);
+		} else {
+			return ResponseEntity.status(HttpStatus.CONFLICT).body(existente);			
+		}			
 	}
 
 	@DeleteMapping("/{id}")
@@ -76,8 +88,7 @@ public class ClienteResource {
 			return ResponseEntity.notFound().build();
 		}
 		
-		negocio.remover(cliente);
-	
+		negocio.remover(cliente);	
 		
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }

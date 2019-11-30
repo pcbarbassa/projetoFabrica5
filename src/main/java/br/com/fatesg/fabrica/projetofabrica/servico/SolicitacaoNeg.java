@@ -17,6 +17,10 @@ public class SolicitacaoNeg {
 	public Solicitacao findById(Integer id){
     	return repository.findById(id);
     }
+	
+	public List<Solicitacao> findAllOrderByStatusSolicitacao_Id(Integer id){
+    	return repository.findAllOrderByStatusSolicitacao_Id(id);
+    }
     
     public Solicitacao findDescricaoById(Long id) {
     	return repository.getOne(id);
@@ -30,7 +34,7 @@ public class SolicitacaoNeg {
     	return repository.findAll();
     }   
     
-    public List<Solicitacao> findByCliente_Id(Long id) {
+    public List<Solicitacao> findByCliente_Id(Integer id) {
     	return repository.findByCliente_Id(id);
     }  
 
@@ -45,6 +49,14 @@ public class SolicitacaoNeg {
 	
 	public void remover(Solicitacao obj) {
 		repository.delete(obj);	
+	}
+
+	public List<Solicitacao> findByTipoPrestador_Id(Integer id) {
+		return repository.findByTipoPrestador_Id(id);
+	}
+
+	public List<Solicitacao> findByStatusSolicitacao_Id(int id) {
+		return repository.findByStatusSolicitacao_Id(id);
 	}
 }
 

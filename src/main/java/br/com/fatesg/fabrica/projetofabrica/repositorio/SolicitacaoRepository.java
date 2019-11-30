@@ -13,10 +13,16 @@ public interface SolicitacaoRepository extends JpaRepository<Solicitacao, Long> 
        
       Solicitacao findById(@Param("id") int id);
             
-      Solicitacao findDescricaoById(@Param("id") Long id);
+      Solicitacao findDescricaoById(@Param("id") Long id); 
+      
+      List<Solicitacao> findAllOrderByStatusSolicitacao_Id(@Param("id")  int id);
       
       List<Solicitacao> findByIdOrderByDescricao(@Param("id") String descricao);
       
-      List<Solicitacao> findByCliente_Id(@Param("id") long id);
+      List<Solicitacao> findByCliente_Id(@Param("id") int id);
+      
+      List<Solicitacao> findByTipoPrestador_Id(@Param("id") int id);
+      
+      List<Solicitacao> findByStatusSolicitacao_Id(@Param("id") int id);
   
 }

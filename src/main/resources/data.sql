@@ -3,19 +3,26 @@ INSERT INTO "endereco" (id, logradouro, cep, cidade, estado, pais) VALUES
 (99991,'Rua das Mangas', '74822-222', 'Uberaba','Minas Gerais','Brasil'),
 (99992,'Rua das Goibas', '74822-333', 'Uberlandia','Minas Gerais','Brasil'),
 (99993,'Rua das Peras', '74822-444', 'Rio de Janeiro','Rio de Janeiro', 'Brasil'),
-(99994,'Rua das Frutas', '74822-555', 'São Paulo','São Paulo','Brasil'); 
+(99994,'Rua das Frutas', '74822-555', 'São Paulo','São Paulo','Brasil');   
 
-INSERT INTO "cliente" (id, nome, cpf_cnpj, dt_nascimento, email, endereco_id, identidade) VALUES
-  (99999, 'Paulo3 Barbassa', '111.111.111-11', '1980-11-14', 'pcbarbassa@gmail.com', 99990, '55555555-8'),
-  (99998, 'Diogo2 Leal', '222.222.222-22', '1990-11-14', 'email2@gmail.com', 99992, '444444-8'),
-  (99997, 'Antonio1 Abelardo', '333.333.333-33', '1970-11-14', 'email3@gmail.com', 99994, '6666666-8');
+INSERT INTO "cliente" (id, nome, cpf_cnpj, dt_nascimento, email, endereco_id, identidade, senha) VALUES
+  (99999, 'Pedro Leopoldo', '111.111.111-11', '1980-11-14', 'pcbarbassa@gmail.com', 99990, '55555555-8', '123456'),
+  (99998, 'Jonas Ribeiro', '222.222.222-22', '1990-11-14', 'email2@gmail.com', 99992, '444444-8', '123456'),
+  (99997, 'José Arnaldo', '333.333.333-33', '1970-11-14', 'email3@gmail.com', 99994, '6666666-8', '123456');
+
+INSERT INTO "administrador" (id, nome, cpf_cnpj, dt_nascimento, email, endereco_id, identidade, senha) VALUES
+  (99999, 'Paulo Barbassa', '444.111.111-11', '1980-12-14', 'pedroleopoldo@gmail.com', 99990, '7577575-8','123456'),
+  (99998, 'Diogo Leal', '555.222.222-22', '1990-11-14', 'email2@gmail.com', 99992, '8585858-8','123456'),
+  (99997, 'Antonio Abelardo', '666.333.333-33', '1970-10-14', 'email3@gmail.com', 99994, '96969696-8','123456');
   
 INSERT INTO "tipo_prestador" (id, ativo, descricao) VALUES 
 (99991, true, 'Pintor'),
-(99992, true, 'Eletricista'),
-(99993, true, 'Encanador'),
-(99994, true, 'Pedreiro'),
-(99995, true, 'Jardineiro'); 
+(99992, false, 'Eletricista'),
+(99993, false, 'Encanador'),
+(99994, false, 'Pedreiro'),
+(99995, false, 'Jardineiro'), 
+(99996, false, 'Acendedor de Lampadas'),
+(99997, false, 'Empurrador de Carrinhos');
 
 INSERT INTO "banco" (id, nome) VALUES
 (001,'001 - BANCO DO BRASIL S/A'),
@@ -267,12 +274,12 @@ INSERT INTO "banco" (id, nome) VALUES
 (756,'756 - BANCO COOPERATIVO DO BRASIL S.A.'),
 (757,'757 - BANCO KEB DO BRASIL S.A.');
   
-INSERT INTO "prestador" (id, agencia, banco_id, conta, cpf_cnpj, dt_nascimento, email, identidade, telefone, endereco_id, nome, tipo_prestador_id) VALUES
-(99991, '0001', '749', '0001', '111.111.111-11', '1925-11-14', 'email1@email.com', '111111-11', '9999-8888', 99990,'Prestador Fulano 1',99991),
-(99992, '0002', '070', '0002', '222.111.111-11', '1926-11-14', 'email2@email.com', '222222-11',  '8888-7777', 99991,'Prestador Ciclano 2',99992),
-(99993, '0003', '001', '0003', '333.111.111-11', '1927-11-14', 'email3@email.com', '3333333-11',  '7777-6666', 99992,'Prestador Beltrano 3',99991),
-(99994, '0004', '749', '0004', '444.111.111-11', '1928-11-14', 'email4@email.com', '444444-11',  '6666-5555', 99993,'Prestador Zutano 4',99993),
-(99995, '0005', '749', '0005', '555.111.111-11', '1929-11-14', 'email5@email.com', '5555555-11',  '5555-4444', 99994,'Prestador Alano 5',99993);
+INSERT INTO "prestador" (id, agencia, banco_id, conta, cpf_cnpj, dt_nascimento, email, identidade, telefone, endereco_id, nome, tipo_prestador_id, senha) VALUES
+(99991, '0001', '749', '0001', '111.111.111-11', '1925-11-14', 'email1@email.com', '111111-11', '9999-8888', 99990,'Prestador Fulano 1',99991, '123456'),
+(99992, '0002', '070', '0002', '222.111.111-11', '1926-11-14', 'email2@email.com', '222222-11',  '8888-7777', 99991,'Prestador Ciclano 2',99992, '123456'),
+(99993, '0003', '001', '0003', '333.111.111-11', '1927-11-14', 'email3@email.com', '3333333-11',  '7777-6666', 99992,'Prestador Beltrano 3',99991, '123456'),
+(99994, '0004', '749', '0004', '444.111.111-11', '1928-11-14', 'email4@email.com', '444444-11',  '6666-5555', 99993,'Prestador Zutano 4',99993, '123456'),
+(99995, '0005', '749', '0005', '555.111.111-11', '1929-11-14', 'email5@email.com', '5555555-11',  '5555-4444', 99994,'Prestador Alano 5',99993, '123456');
 
 INSERT INTO "status_solicitacao" (id, ativo, descricao) VALUES 
 (99991, true, 'Aguard. Orcamento'),

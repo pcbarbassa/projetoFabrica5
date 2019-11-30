@@ -16,5 +16,7 @@ public interface TipoPrestadorRepository extends JpaRepository<TipoPrestador, Lo
     List<TipoPrestador> findByIdOrderByDescricao(@Param("id") String descricao);
 
 	TipoPrestador findByDescricao(String descricao);
+
+	List<TipoPrestador> findByAtivoTrue();
   
 }

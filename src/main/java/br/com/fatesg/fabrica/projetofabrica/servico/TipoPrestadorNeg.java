@@ -46,4 +46,8 @@ public class TipoPrestadorNeg {
 	public TipoPrestador findByDescricao(String descricao) {
 		return repository.findByDescricao(descricao);
 	}
+
+	public List<TipoPrestador> findByAtivoTrue() {
+		return repository.findByAtivoTrue();
+	}
 }

@@ -18,71 +18,67 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.fatesg.fabrica.projetofabrica.TipoPrestador;
-import br.com.fatesg.fabrica.projetofabrica.servico.TipoPrestadorNeg;
+import br.com.fatesg.fabrica.projetofabrica.Administrador;
+import br.com.fatesg.fabrica.projetofabrica.servico.AdministradorNeg;
 @Qualifier
 @RestController
-@RequestMapping(value="/api/tipoprestadores", path="/api/tipoprestadores")
-public class TipoPrestadorResource {
+@RequestMapping(value="/api/administradores", path="/api/administradores")
+public class AdministradorResource {
 		
 	@Autowired
-	private TipoPrestadorNeg negocio;
+	private AdministradorNeg negocio;
 
 	@GetMapping
-	public List<TipoPrestador> listar() {
-		return negocio.findByAtivoTrue();
-	}
-	
-	@GetMapping("/todos")
-	public List<TipoPrestador> listarTudo() {
+	public List<Administrador> listar() {
 		return negocio.findAll();
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<TipoPrestador> buscar(@PathVariable int id) {
-		TipoPrestador obj = negocio.findById(id);		
-		if (obj == null) {
+	public ResponseEntity<Administrador> buscar(@PathVariable int id) {
+		Administrador administrador = negocio.findById(id);
+		
+		if (administrador == null) {
 			return ResponseEntity.notFound().build();
-		}		
-		return ResponseEntity.ok(obj);		
+		}
+		
+		return ResponseEntity.ok(administrador);
+		
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<TipoPrestador> atualizar(@PathVariable int id, 
-			@Valid @RequestBody TipoPrestador obj) {
-		TipoPrestador existente = negocio.findById(id);
+	public ResponseEntity<Administrador> atualizar(@RequestBody int id, 
+			@RequestBody Administrador administrador) {
+		Administrador existente = negocio.findById(id);
 		
 		if (existente == null) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		BeanUtils.copyProperties(obj, existente, "id");		
-		existente = negocio.save(existente);		
-		return ResponseEntity.ok(existente);		
+		BeanUtils.copyProperties(administrador, existente, "id");
+		
+		existente = negocio.save(existente);
+		
+		return ResponseEntity.ok(existente);
+		
 	}
 	
 	@PostMapping
-	public ResponseEntity<TipoPrestador> criar(@Valid @RequestBody TipoPrestador objeto){
-		   
-		TipoPrestador existente = negocio.findByDescricao(objeto.getDescricao());
-			
-			if (existente == null) {
-				negocio.save(objeto);
-				return ResponseEntity.ok(objeto);
-			} else {
-				return ResponseEntity.status(HttpStatus.CONFLICT).body(existente);
-				
-			}		
+	public Administrador criar(@Valid @RequestBody Administrador administrador){
+	   return negocio.save(administrador);
 	}
 
 	@DeleteMapping("/{id}")
     public ResponseEntity<Void> remover(@PathVariable int id) {
         
-		TipoPrestador obj = negocio.findById(id);		
-		if (obj == null) {
+		Administrador administrador = negocio.findById(id);
+		
+		if (administrador == null) {
 			return ResponseEntity.notFound().build();
-		}		
-		negocio.remover(obj);		
+		}
+		
+		negocio.remover(administrador);
+	
+		
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
 }

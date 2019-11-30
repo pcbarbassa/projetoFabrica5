@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
@@ -49,8 +48,8 @@ public class Administrador implements Serializable {
 	@Getter @Setter @ManyToOne
 	private Endereco endereco;
 	
-	@Getter @Setter @OneToOne
-	private Usuario usuario;
+	@Getter @Setter
+	private String senha;
 	
 	@Getter @Column(insertable=false, updatable=false)
 	@org.hibernate.annotations.Generated(org.hibernate.annotations.GenerationTime.INSERT)
