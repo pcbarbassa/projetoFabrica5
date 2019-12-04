@@ -304,8 +304,17 @@ INSERT INTO "solicitacao" (id, valor, status_solicitacao_id, descricao, cliente_
 (99995, 125.80, 99991, 'Pintura de Parede de 2x2 metros.', 99999, 99991, '2019-08-15'),
 (99996, 125.80, 99991, 'Construcao de ares 2x3 para canil de cachorro.', 99999, 99994, '2019-08-15'),
 (99997, 125.80, 99991, 'Pintura de Parede de 2x4 metros.', 99999, 99991, '2019-08-15'),
-(99998, 125.80, 99991, 'Colocar 04 batentes de porta interna.', 99999, 99994, '2019-08-15'),
-(99999, 949, 99992, 'Motorista Particular para evento de Gala.', 99998, 99910, '2019-07-14');
+(99998, 125.80, 99991, 'Pintura de Parede de 2x5 metros.', 99999, 99991, '2019-08-15'),
+(99999, 125.80, 99991, 'Pintura de Parede de 2x6 metros.', 99999, 99991, '2019-08-15'),
+(99910, 125.80, 99991, 'Pintura de Parede de 2x7 metros.', 99999, 99991, '2019-08-15'),
+(99911, 125.80, 99991, 'Pintura de Parede de 2x8 metros.', 99999, 99991, '2019-08-15'),
+(99912, 125.80, 99991, 'Pintura de Parede de 2x9 metros.', 99999, 99991, '2019-08-15'),
+(99913, 125.80, 99991, 'Pintura de Parede de 2x10 metros.', 99999, 99991, '2019-08-15'),
+(99914, 125.80, 99991, 'Pintura de Parede de 2x11 metros.', 99999, 99991, '2019-08-15'),
+(99915, 125.80, 99991, 'Pintura de Parede de 2x12 metros.', 99999, 99991, '2019-08-15'),
+(99916, 125.80, 99991, 'Pintura de Parede de 2x13 metros.', 99999, 99991, '2019-08-15'),
+(99917, 125.80, 99991, 'Pintura de Parede de 2x14 metros.', 99999, 99991, '2019-08-15'),
+(99918, 949, 99992, 'Motorista Particular para evento de Gala.', 99998, 99910, '2019-07-14');
 
 INSERT INTO "ordem_servico" (id, valor, status_servico_id, descricao, prestador_id, solicitacao_id, data) VALUES
 (99991, 1500, 99991, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit', 99991, 99995,'2019-11-19'),
