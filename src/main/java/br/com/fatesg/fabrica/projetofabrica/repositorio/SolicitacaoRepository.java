@@ -1,6 +1,7 @@
 package br.com.fatesg.fabrica.projetofabrica.repositorio;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
@@ -30,5 +31,4 @@ public interface SolicitacaoRepository extends JpaRepository<Solicitacao, Long> 
       
       List<Solicitacao> findByStatusSolicitacao_IdAndTipoPrestador_Id(@Param("tipoPrestadorId") Integer tipoPrestadorId, 
     		  @Param("statusSolicitacaoId") Integer statusSolicitacaoId);
-  
 }

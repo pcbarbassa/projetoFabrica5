@@ -12,6 +12,8 @@ import br.com.fatesg.fabrica.projetofabrica.Endereco;
 public interface EnderecoRepository extends JpaRepository<Endereco, Long> {
        
 	Endereco findById(@Param("id") int id);
+	
+	List<Endereco> findAll();
                
 	Endereco findDescricaoById(@Param("id") Long id);
       

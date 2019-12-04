@@ -31,7 +31,7 @@ public class Solicitacao implements Serializable {
       @Getter @Setter
       private Float valor;
       
-      @Getter @Setter @NotNull @JsonFormat(pattern="yyyy-MM-dd")
+      @Getter @Setter @JsonFormat(pattern="yyyy-MM-dd")
       private Date data;
       
       @Getter @Setter @OneToOne

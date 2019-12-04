@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,7 +24,7 @@ public class Endereco implements Serializable {
 	@Getter @Id @GeneratedValue(strategy=GenerationType.AUTO)  
 	private Integer id;     
     
-	@Getter @Setter 
+	@Getter @Setter @NotNull
 	private String logradouro;
     
 	@Getter @Setter 
@@ -35,10 +36,10 @@ public class Endereco implements Serializable {
 	@Getter @Setter 
 	private String lon;	
     
-	@Getter @Setter 
+	@Getter @Setter @NotNull
 	private String cidade;
     
-	@Getter @Setter
+	@Getter @Setter @NotNull
 	private String estado;	 
     
 	@Getter @Setter

@@ -21,7 +21,7 @@ public class Banco implements Serializable {
 	@Getter @Id
 	private Integer id;     
     
-	@Getter @NotNull 
+	@Getter 
 	private String nome;
 
 }

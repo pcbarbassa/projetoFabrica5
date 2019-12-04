@@ -1,8 +1,10 @@
 package br.com.fatesg.fabrica.projetofabrica.servico;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import br.com.fatesg.fabrica.projetofabrica.Solicitacao;
@@ -42,7 +44,7 @@ public class SolicitacaoNeg {
 		repository.save(obj);
 		return obj;
 	}
-		
+	
 	public void removerPorId(long id) {
 		repository.deleteById(id);	
 	}

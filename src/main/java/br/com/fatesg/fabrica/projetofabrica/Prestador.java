@@ -8,10 +8,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -46,13 +49,13 @@ public class Prestador implements Serializable {
 	@Getter @Setter @NotNull  
 	private String identidade;
 	
-	@Getter @Setter @ManyToOne
+	@Getter @Setter @OneToOne @Cascade(CascadeType.ALL)
 	private Endereco endereco;
 	
-	@Getter @Setter @NotNull @OneToOne
+	@Getter @Setter @OneToOne
 	private Banco banco;
 	
-	@Getter @Setter @NotNull 
+	@Getter @Setter  
 	private String agencia;
 	
 	@Getter @Setter @NotNull 
