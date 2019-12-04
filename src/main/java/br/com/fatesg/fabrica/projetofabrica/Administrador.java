@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OrderBy;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
@@ -30,7 +31,7 @@ public class Administrador implements Serializable {
 	@Getter @Id @GeneratedValue(strategy=GenerationType.AUTO) 
 	private Integer id;     
     
-	@Getter @Setter @NotNull
+	@Getter @Setter @NotNull @OrderBy
 	private String nome;
     	    
 	@Getter @Setter @NotNull @Column(nullable=false, length=16, unique=true)

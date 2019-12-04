@@ -8,8 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
@@ -34,7 +34,7 @@ public class Prestador implements Serializable {
 	@Getter @Id @GeneratedValue(strategy=GenerationType.AUTO) 
 	private Integer id;     
 	
-	@Getter @Setter @NotNull 
+	@Getter @Setter @OrderBy @NotNull 
 	private String nome;	
 	
 	@Getter @Setter @Column(nullable=false, length=16, unique=true)  

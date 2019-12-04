@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-import javax.validation.constraints.NotNull;
+import javax.persistence.OrderBy;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -34,7 +34,7 @@ public class Solicitacao implements Serializable {
       @Getter @Setter @JsonFormat(pattern="yyyy-MM-dd")
       private Date data;
       
-      @Getter @Setter @OneToOne
+      @Getter @Setter @OneToOne @OrderBy
       private StatusSolicitacao statusSolicitacao;
       
       @Getter @Setter

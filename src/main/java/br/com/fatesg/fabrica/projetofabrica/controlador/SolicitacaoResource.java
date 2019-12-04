@@ -31,14 +31,14 @@ public class SolicitacaoResource {
 	private SolicitacaoNeg negocio;
 
 	@GetMapping
-	public List<Solicitacao> listar() {
+	public List<Solicitacao> listar() {		
 		return negocio.findAll();
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<List<Solicitacao>> buscar(@PathVariable int id) {
-		List<Solicitacao> obj = negocio.findAllOrderByStatusSolicitacao_Id(id);		
-		if (obj == null || obj.isEmpty()) {
+	public ResponseEntity<Solicitacao> buscar(@PathVariable int id) {
+		Solicitacao obj = negocio.findById(id);		
+		if (obj == null) {
 			return ResponseEntity.notFound().build();
 		}		
 		return ResponseEntity.ok(obj);		

@@ -297,10 +297,10 @@ INSERT INTO "status_servico" (id, ativo, descricao) VALUES
 (99993, true, 'Cancelado'); 
 
 INSERT INTO "solicitacao" (id, valor, status_solicitacao_id, descricao, cliente_id, tipo_prestador_id, data) VALUES
-(99991, 1500, 99991, 'Pintura de Parede de 2x3 metros.', 99999, 99991, '2019-11-19'),
-(99992, 200, 99992, 'Instalacao de 3 Luminarias de LED 30x30cm', 99998, 99992, '2019-10-17'),
-(99993, 50.85, 99993, 'Desenvolvimento de sistema para controle de Prestaçao de Servicos', 99997, 99998, '2019-09-16'),
-(99994, 125.80, 99994, 'Substrituicao de Cano furado', 99999, 99993, '2019-08-15'),
+(99991, 1500, 99994, 'Pintura de Parede de 2x3 metros.', 99999, 99991, '2019-11-19'),
+(99992, 200, 99993, 'Instalacao de 3 Luminarias de LED 30x30cm', 99998, 99992, '2019-10-17'),
+(99993, 50.85, 99992, 'Desenvolvimento de sistema para controle de Prestaçao de Servicos', 99997, 99998, '2019-09-16'),
+(99994, 125.80, 99991, 'Substrituicao de Cano furado', 99999, 99993, '2019-08-15'),
 (99995, 949, 99992, 'Motorista Particular para evento de Gala', 99998, 99910, '2019-07-14');
 
 INSERT INTO "ordem_servico" (id, valor, status_servico_id, descricao, prestador_id, solicitacao_id, data) VALUES

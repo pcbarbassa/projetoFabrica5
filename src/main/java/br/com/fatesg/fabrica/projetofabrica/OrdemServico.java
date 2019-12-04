@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -31,7 +32,7 @@ public class OrdemServico implements Serializable {
 	@Getter @Setter @NotNull @JsonFormat(pattern="yyyy-MM-dd")	
 	private Date data;
     
-	@Getter @Setter 
+	@Getter @Setter @OrderBy
 	private String descricao;
     
 	@Getter @Setter 

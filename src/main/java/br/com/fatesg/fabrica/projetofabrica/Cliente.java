@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OrderBy;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
@@ -30,7 +31,7 @@ public class Cliente implements Serializable {
 	@Getter @Id @GeneratedValue(strategy=GenerationType.AUTO) 
 	private Integer id;     
     
-	@Getter @Setter @NotNull
+	@Getter @Setter @OrderBy @NotNull
 	private String nome;
     	    
 	@Getter @Setter @Column(nullable=false, length=16, unique = true)

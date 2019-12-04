@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+import javax.persistence.OrderBy;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,7 +21,7 @@ public class Banco implements Serializable {
 	@Getter @Id
 	private Integer id;     
     
-	@Getter 
+	@Getter @OrderBy 
 	private String nome;
 
 }
