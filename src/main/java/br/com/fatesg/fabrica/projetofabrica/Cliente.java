@@ -37,7 +37,7 @@ public class Cliente implements Serializable {
 	@Getter @Setter @OrderBy @NotNull
 	private String nome;
     	    
-	@Getter @Setter @Column(nullable=false, length=16, unique = true)
+	@Getter @Setter @Column(nullable=false, length=20, unique = true)
 	private String cpfCnpj;    	
     
     @Getter @Setter @Email @Column(nullable=false, length=100, unique = true)
