@@ -277,12 +277,12 @@ INSERT INTO "tipo_prestador" (id, ativo, descricao) VALUES
 (99998, false, 'Desenvolvedor de Sistemas'),
 (99910, false, 'Motorista Particular');
 
-INSERT INTO "prestador" (id, agencia, banco_id, conta, cpf_cnpj, dt_nascimento, email, identidade, telefone, endereco_id, nome, tipo_prestador_id, senha) VALUES
-(99991, '0001', '749', '0001', '111.111.111-11', '1925-11-14', 'email1@email.com', '111111-11', '9999-8888', 99990,'Prestador Fulano 1',99991, '123456'),
-(99992, '0002', '070', '0002', '222.111.111-11', '1926-11-14', 'email2@email.com', '222222-11',  '8888-7777', 99991,'Prestador Ciclano 2',99992, '123456'),
-(99993, '0003', '001', '0003', '333.111.111-11', '1927-11-14', 'email3@email.com', '3333333-11',  '7777-6666', 99992,'Prestador Beltrano 3',99991, '123456'),
-(99994, '0004', '749', '0004', '444.111.111-11', '1928-11-14', 'email4@email.com', '444444-11',  '6666-5555', 99993,'Prestador Zutano 4',99993, '123456'),
-(99995, '0005', '749', '0005', '555.111.111-11', '1929-11-14', 'email5@email.com', '5555555-11',  '5555-4444', 99994,'Prestador Alano 5',99993, '123456');
+INSERT INTO "prestador" (id, agencia, banco_id, conta, cpf_cnpj, email, identidade, telefone, endereco_id, nome, tipo_prestador_id, senha) VALUES
+(99991, '0001', '749', '0001', '111.111.111-11', 'email1@email.com', '111111-11', '9999-8888', 99990,'Prestador Fulano 1',99991, '123456'),
+(99992, '0002', '070', '0002', '222.111.111-11',  'email2@email.com', '222222-11',  '8888-7777', 99991,'Prestador Ciclano 2',99992, '123456'),
+(99993, '0003', '001', '0003', '333.111.111-11',  'email3@email.com', '3333333-11',  '7777-6666', 99992,'Prestador Beltrano 3',99991, '123456'),
+(99994, '0004', '749', '0004', '444.111.111-11',  'email4@email.com', '444444-11',  '6666-5555', 99993,'Prestador Zutano 4',99993, '123456'),
+(99995, '0005', '749', '0005', '555.111.111-11',  'email5@email.com', '5555555-11',  '5555-4444', 99994,'Prestador Alano 5',99993, '123456');
 
 INSERT INTO "status_solicitacao" (id, ativo, descricao) VALUES 
 (99991, true, 'Aguard. Orcamento'),

@@ -43,9 +43,6 @@ public class Prestador implements Serializable {
 	@Getter @Setter @Email @Column(nullable=false, length=100, unique = true)
     private String email;
 	
-	@Getter @Setter @NotNull @JsonFormat(pattern="yyyy-MM-dd")	  
-	private Date dtNascimento;
-	
 	@Getter @Setter @NotNull  
 	private String identidade;
 	
