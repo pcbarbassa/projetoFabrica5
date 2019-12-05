@@ -5,10 +5,10 @@ INSERT INTO "endereco" (id, logradouro, cep, cidade, estado, pais) VALUES
 (99993,'Rua das Peras', '74822-444', 'Rio de Janeiro','Rio de Janeiro', 'Brasil'),
 (99994,'Rua das Frutas', '74822-555', 'São Paulo','São Paulo','Brasil');   
 
-INSERT INTO "cliente" (id, nome, cpf_cnpj, dt_nascimento, email, endereco_id, identidade, senha) VALUES
-  (99999, 'Pedro Leopoldo', '111.111.111-11', '1980-11-14', 'pcbarbassa@gmail.com', 99990, '55555555-8', '123456'),
-  (99998, 'Jonas Ribeiro', '222.222.222-22', '1990-11-14', 'email2@gmail.com', 99992, '444444-8', '123456'),
-  (99997, 'José Arnaldo', '333.333.333-33', '1970-11-14', 'email3@gmail.com', 99994, '6666666-8', '123456');
+INSERT INTO "cliente" (id, nome, cpf_cnpj, email, endereco_id, identidade, senha) VALUES
+  (99999, 'Pedro Leopoldo', '111.111.111-11', 'pcbarbassa@gmail.com', 99990, '55555555-8', '123456'),
+  (99998, 'Jonas Ribeiro', '222.222.222-22', 'email2@gmail.com', 99992, '444444-8', '123456'),
+  (99997, 'José Arnaldo', '333.333.333-33', 'email3@gmail.com', 99994, '6666666-8', '123456');
 
 INSERT INTO "administrador" (id, nome, cpf_cnpj, dt_nascimento, email, endereco_id, identidade, senha) VALUES
   (99999, 'Paulo Barbassa', '444.111.111-11', '1980-12-14', 'pedroleopoldo@gmail.com', 99990, '7577575-8','123456'),

@@ -13,6 +13,9 @@ import javax.persistence.OrderBy;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
@@ -39,14 +42,11 @@ public class Cliente implements Serializable {
     
     @Getter @Setter @Email @Column(nullable=false, length=100, unique = true)
     private String email;
-	    	
-    @NotNull @Getter @Setter @JsonFormat(pattern="yyyy-MM-dd")
-    private Date dtNascimento;	
     	
 	@Getter @Setter 
 	private String identidade;
     
-	@Getter @Setter @ManyToOne
+	@Getter @Setter @ManyToOne @Cascade(CascadeType.ALL)
 	private Endereco endereco;
 	
 	@Getter @Setter
